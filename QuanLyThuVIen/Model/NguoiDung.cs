@@ -15,7 +15,7 @@ namespace QuanLyThuVIen.Model
         public string Email { get; set; }
         public int MaChucVu { get; set; }
         public bool GioiTinh { get; set; }
-        public string getGioiTinh {
+        public string GetGioiTinh {
             get
             {
                 if (this.GioiTinh == true)

@@ -39,8 +39,7 @@ namespace QuanLyThuVIen.GUI
             childForm.Show();
         }
         private void button1_Click(object sender, EventArgs e)
-        {
-            
+        {            
             OpenChildForm(new UserDocGia());                      
         }
         private void button2_Click(object sender, EventArgs e)
@@ -48,5 +47,9 @@ namespace QuanLyThuVIen.GUI
             OpenChildForm(new UserThuThu());
         }
 
+        private void bttQuanLy_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormQuanLyNguoiDung());
+        }
     }
 }

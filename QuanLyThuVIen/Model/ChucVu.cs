@@ -8,7 +8,7 @@ namespace QuanLyThuVIen.Model
 {
    public class ChucVu
     {
-       public int MachucVu { get; set; }
+       public int MaChucVu { get; set; }
         public string Tenchucvu { get; set; }
         public string Ghichu { get; set; }
         

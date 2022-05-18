@@ -20,6 +20,25 @@ namespace QuanLyThuVIen.Data
                 return lstnguoidung;
             }
         }
+        public List<NguoiDung> GetListNguoiDung(string search_value)
+        {
+
+            {
+                using (var cnn = DbUtils.GetConnection())
+                {
+                    string tam = "%" + search_value + "%";
+                    var sql = @"select * from NguoiDung where (SoDienThoai like @searchvalue) or (HoTen like @searchvalue) ";
+                    var param = new
+                    {
+                        searchvalue = tam.Trim()
+                    };
+                    //int nEffectedRows = cnn.Execute(sql, param);
+
+                    var lstNguoiDung = cnn.Query<NguoiDung>(sql, param).ToList();
+                    return lstNguoiDung;
+                }
+            }
+        }
         /// <summary>
         /// Kiểm tra đăng nhập
         /// </summary>
@@ -74,6 +93,36 @@ namespace QuanLyThuVIen.Data
                 var param = new { MaNguoiDung = MaNguoiDung };
                 var result = cnn.Query<NguoiDung>(sql, param).ToList();
                 return result[0];
+            }
+        }
+        public List<ChucVu> GetChucVu()
+        {
+            {
+                using (var cnn = DbUtils.GetConnection())
+                {
+                    var sql = @"select *
+                                from ChucVu";
+                    //int nEffectedRows = cnn.Execute(sql, param);
+
+                    var lstChucVu = cnn.Query<ChucVu>(sql).ToList();
+                    return lstChucVu;
+
+                }
+            }
+        }
+        public List<string> GetNam()
+        {
+            {
+                using (var cnn = DbUtils.GetConnection())
+                {
+                    var sql = @"select distinct YEAR(NgaySinh)
+                                from NguoiDung";
+                    //int nEffectedRows = cnn.Execute(sql, param);
+
+                    var lstNam = cnn.Query<string>(sql).ToList();
+                    return lstNam;
+
+                }
             }
         }
         public ChucVu GetChucVu(int Machucvu)
@@ -236,6 +285,105 @@ namespace QuanLyThuVIen.Data
             }
 
         }
+        public List<NguoiDung> GetNguoiDungTheoGioiTinh(Boolean GioiTinh)
+        {
+            {
+                using (var cnn = DbUtils.GetConnection())
+                {
+                    var sql = @"select *  from NguoiDung where  GioiTinh like @searchvalue";
 
+                    var param = new
+                    {
+                        searchvalue = GioiTinh
+                    };
+
+                    var lstNguoiDung = cnn.Query<NguoiDung>(sql, param).ToList();
+                    return lstNguoiDung;
+                }
+            }
+        }
+        public List<NguoiDung> GetNguoiDungTheoNam(string NamSinhNguoiDung)
+        {
+            {
+                using (var cnn = DbUtils.GetConnection())
+                {
+                    var sql = @"select *
+                                from NguoiDung
+                                where YEAR(NgaySinh) like @searchvalue";
+                    var param = new
+                    {
+                        searchvalue = NamSinhNguoiDung
+                    };
+
+                    var lstNguoiDung = cnn.Query<NguoiDung>(sql, param).ToList();
+                    return lstNguoiDung;
+                }
+            }
+        }
+        public List<NguoiDung> GetNguoiDungTheoChucVu(int MaChucVu)
+        {
+            {
+                using (var cnn = DbUtils.GetConnection())
+                {
+                    var sql = @"select *
+                                from NguoiDung 
+                                where MaChucVu  like @searchvalue";
+                    var param = new
+                    {
+                        searchvalue = MaChucVu
+                    };
+
+                    //int nEffectedRows = cnn.Execute(sql, param);
+                    var lstNguoiDung = cnn.Query<NguoiDung>(sql, param).ToList();
+
+                    return lstNguoiDung;
+
+                }
+            }
+        }
+        public bool Delete(int MaNguoiDung)
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                var sql = @"delete from NguoiDung where MaNguoiDung = @MaNguoiDung";
+
+                var param = new
+                {
+                    MaNguoiDung = MaNguoiDung
+                };
+
+                int nEffectedRows = cnn.Execute(sql, param);
+
+                //int nEffectedRows = cnn.Execute("sp_Sach_Insert", param, commandType: CommandType.StoredProcedure);
+
+                return nEffectedRows == 1;
+            }
+        }
+        public bool Insert(NguoiDung s)
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                var sql = @"INSERT INTO NguoiDung (HoTen, Email, NgaySinh, SoDienThoai, GioiTinh, MaChucVu, UserName,Password)
+                VALUES (@HoTen, @Email, @NgaySinh, @SoDienThoai, @GioiTinh, @MaChucVu, @UserName,'123')";
+
+                var param = new
+                {
+                    HoTen = s.HoTen,
+                    Email = s.Email,
+                    NgaySinh = s.NgaySinh,
+                    SoDienThoai = s.SoDienThoai,
+                    GioiTinh = s.GioiTinh,
+                    MaChucVu = s.MaChucVu,
+                    UserName = s.UserName
+
+                };
+
+                int nEffectedRows = cnn.Execute(sql, param);
+
+                //int nEffectedRows = cnn.Execute("sp_Sach_Insert", param, commandType: CommandType.StoredProcedure);
+
+                return nEffectedRows == 1;
+            }
+        }
     }
 }

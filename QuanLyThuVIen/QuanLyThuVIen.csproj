@@ -111,6 +111,24 @@
     <Compile Include="GUI\FormGiaHan.Designer.cs">
       <DependentUpon>FormGiaHan.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormQuanLyNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormQuanLyNguoiDung.designer.cs">
+      <DependentUpon>FormQuanLyNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormThemNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormThemNguoiDung.designer.cs">
+      <DependentUpon>FormThemNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormThongTinChiTietQuanLY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormThongTinChiTietQuanLY.designer.cs">
+      <DependentUpon>FormThongTinChiTietQuanLY.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormTraSach.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +262,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormGiaHan.resx">
       <DependentUpon>FormGiaHan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormQuanLyNguoiDung.resx">
+      <DependentUpon>FormQuanLyNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormThemNguoiDung.resx">
+      <DependentUpon>FormThemNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormThongTinChiTietQuanLY.resx">
+      <DependentUpon>FormThongTinChiTietQuanLY.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormTraSach.resx">
       <DependentUpon>FormTraSach.cs</DependentUpon>

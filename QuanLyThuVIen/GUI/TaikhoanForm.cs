@@ -26,7 +26,7 @@ namespace QuanLyThuVIen.GUI
             this.txtHovaten.Text = a.HoTen;
             this.txtEmail.Text = a.Email;
             this.txtPhone.Text = a.SoDienThoai;
-            this.txtGioitinh.Text = a.getGioiTinh;
+            this.txtGioitinh.Text = a.GetGioiTinh;
             this.txtChucVu.Text= data.GetChucVu(a.MaChucVu).Tenchucvu;
 
             

@@ -69,9 +69,10 @@ namespace QuanLyThuVIen.GUI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(17, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 20);
+            this.label1.Size = new System.Drawing.Size(236, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "DANH SÁCH ĐỘC GIẢ";
             // 
@@ -82,9 +83,10 @@ namespace QuanLyThuVIen.GUI
             this.cbbGioiTinh.Items.AddRange(new object[] {
             "Nam ",
             "Nữ"});
-            this.cbbGioiTinh.Location = new System.Drawing.Point(17, 37);
+            this.cbbGioiTinh.Location = new System.Drawing.Point(23, 46);
+            this.cbbGioiTinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbbGioiTinh.Name = "cbbGioiTinh";
-            this.cbbGioiTinh.Size = new System.Drawing.Size(87, 21);
+            this.cbbGioiTinh.Size = new System.Drawing.Size(115, 24);
             this.cbbGioiTinh.TabIndex = 1;
             this.cbbGioiTinh.SelectedIndexChanged += new System.EventHandler(this.cbbGioiTinh_SelectedIndexChanged);
             // 
@@ -96,9 +98,10 @@ namespace QuanLyThuVIen.GUI
             "Còn hạn",
             "Hết hạn",
             "Khóa"});
-            this.cbbTrangThai.Location = new System.Drawing.Point(119, 37);
+            this.cbbTrangThai.Location = new System.Drawing.Point(159, 46);
+            this.cbbTrangThai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbbTrangThai.Name = "cbbTrangThai";
-            this.cbbTrangThai.Size = new System.Drawing.Size(87, 21);
+            this.cbbTrangThai.Size = new System.Drawing.Size(115, 24);
             this.cbbTrangThai.TabIndex = 1;
             this.cbbTrangThai.SelectedIndexChanged += new System.EventHandler(this.cbbTrangThai_SelectedIndexChanged);
             // 
@@ -108,9 +111,10 @@ namespace QuanLyThuVIen.GUI
             this.cbbKhoa.FormattingEnabled = true;
             this.cbbKhoa.Items.AddRange(new object[] {
             "--Chọn Khoa--"});
-            this.cbbKhoa.Location = new System.Drawing.Point(223, 37);
+            this.cbbKhoa.Location = new System.Drawing.Point(297, 46);
+            this.cbbKhoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbbKhoa.Name = "cbbKhoa";
-            this.cbbKhoa.Size = new System.Drawing.Size(87, 21);
+            this.cbbKhoa.Size = new System.Drawing.Size(115, 24);
             this.cbbKhoa.TabIndex = 1;
             this.cbbKhoa.SelectedIndexChanged += new System.EventHandler(this.cbbKhoa_SelectedIndexChanged);
             // 
@@ -118,9 +122,10 @@ namespace QuanLyThuVIen.GUI
             // 
             this.cbbNamSinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbNamSinh.FormattingEnabled = true;
-            this.cbbNamSinh.Location = new System.Drawing.Point(328, 37);
+            this.cbbNamSinh.Location = new System.Drawing.Point(437, 46);
+            this.cbbNamSinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbbNamSinh.Name = "cbbNamSinh";
-            this.cbbNamSinh.Size = new System.Drawing.Size(87, 21);
+            this.cbbNamSinh.Size = new System.Drawing.Size(115, 24);
             this.cbbNamSinh.TabIndex = 1;
             this.cbbNamSinh.SelectedIndexChanged += new System.EventHandler(this.cbbNamSinh_SelectedIndexChanged);
             // 
@@ -130,9 +135,10 @@ namespace QuanLyThuVIen.GUI
             this.tbTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbTimKiem.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbTimKiem.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.tbTimKiem.Location = new System.Drawing.Point(525, 38);
+            this.tbTimKiem.Location = new System.Drawing.Point(700, 47);
+            this.tbTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbTimKiem.Name = "tbTimKiem";
-            this.tbTimKiem.Size = new System.Drawing.Size(262, 20);
+            this.tbTimKiem.Size = new System.Drawing.Size(349, 22);
             this.tbTimKiem.TabIndex = 2;
             this.tbTimKiem.Text = "search..";
             this.tbTimKiem.TextChanged += new System.EventHandler(this.tbTimKiem_TextChanged);
@@ -168,9 +174,11 @@ namespace QuanLyThuVIen.GUI
             this.colUserName,
             this.colPassword});
             this.GridDocGia.GridColor = System.Drawing.SystemColors.Control;
-            this.GridDocGia.Location = new System.Drawing.Point(17, 65);
+            this.GridDocGia.Location = new System.Drawing.Point(23, 80);
+            this.GridDocGia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GridDocGia.Name = "GridDocGia";
-            this.GridDocGia.Size = new System.Drawing.Size(770, 280);
+            this.GridDocGia.RowHeadersWidth = 51;
+            this.GridDocGia.Size = new System.Drawing.Size(1027, 345);
             this.GridDocGia.TabIndex = 4;
             this.GridDocGia.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridDocGia_CellMouseClick);
             // 
@@ -186,7 +194,9 @@ namespace QuanLyThuVIen.GUI
             // 
             this.colTrangThai.DataPropertyName = "MaTrangThai";
             this.colTrangThai.HeaderText = "Trạng Thái";
+            this.colTrangThai.MinimumWidth = 6;
             this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.Width = 125;
             // 
             // colNgaySinh
             // 
@@ -217,84 +227,107 @@ namespace QuanLyThuVIen.GUI
             // 
             this.colMaDocGia.DataPropertyName = "MaDocGia";
             this.colMaDocGia.HeaderText = "Mã độc giả";
+            this.colMaDocGia.MinimumWidth = 6;
             this.colMaDocGia.Name = "colMaDocGia";
             this.colMaDocGia.Visible = false;
+            this.colMaDocGia.Width = 125;
             // 
             // colMaChucDanh
             // 
             this.colMaChucDanh.DataPropertyName = "MaChucDanh";
             this.colMaChucDanh.HeaderText = "Mã Chức Danh";
+            this.colMaChucDanh.MinimumWidth = 6;
             this.colMaChucDanh.Name = "colMaChucDanh";
             this.colMaChucDanh.Visible = false;
+            this.colMaChucDanh.Width = 125;
             // 
             // colEmail
             // 
             this.colEmail.DataPropertyName = "Email";
             this.colEmail.HeaderText = "Email";
+            this.colEmail.MinimumWidth = 6;
             this.colEmail.Name = "colEmail";
             this.colEmail.Visible = false;
+            this.colEmail.Width = 125;
             // 
             // colDiaChi
             // 
             this.colDiaChi.DataPropertyName = "DiaChi";
             this.colDiaChi.HeaderText = "Địa chỉ";
+            this.colDiaChi.MinimumWidth = 6;
             this.colDiaChi.Name = "colDiaChi";
             this.colDiaChi.Visible = false;
+            this.colDiaChi.Width = 125;
             // 
             // colNgayDangKy
             // 
             this.colNgayDangKy.DataPropertyName = "NgayDangKy";
             this.colNgayDangKy.HeaderText = "Ngày đăng ký";
+            this.colNgayDangKy.MinimumWidth = 6;
             this.colNgayDangKy.Name = "colNgayDangKy";
             this.colNgayDangKy.Visible = false;
+            this.colNgayDangKy.Width = 125;
             // 
             // colNgayHetHan
             // 
             this.colNgayHetHan.DataPropertyName = "NgayHetHan";
             this.colNgayHetHan.HeaderText = "Ngày hết hạn";
+            this.colNgayHetHan.MinimumWidth = 6;
             this.colNgayHetHan.Name = "colNgayHetHan";
             this.colNgayHetHan.Visible = false;
+            this.colNgayHetHan.Width = 125;
             // 
             // colLop
             // 
             this.colLop.DataPropertyName = "Lop";
             this.colLop.HeaderText = "Lớp";
+            this.colLop.MinimumWidth = 6;
             this.colLop.Name = "colLop";
             this.colLop.Visible = false;
+            this.colLop.Width = 125;
             // 
             // colMaKhoa
             // 
             this.colMaKhoa.DataPropertyName = "MaKhoa";
             this.colMaKhoa.HeaderText = "Mã khoa";
+            this.colMaKhoa.MinimumWidth = 6;
             this.colMaKhoa.Name = "colMaKhoa";
             this.colMaKhoa.Visible = false;
+            this.colMaKhoa.Width = 125;
             // 
             // colKhoaHoc
             // 
             this.colKhoaHoc.DataPropertyName = "KhoaHoc";
             this.colKhoaHoc.HeaderText = "Khóa học";
+            this.colKhoaHoc.MinimumWidth = 6;
             this.colKhoaHoc.Name = "colKhoaHoc";
             this.colKhoaHoc.Visible = false;
+            this.colKhoaHoc.Width = 125;
             // 
             // colUserName
             // 
             this.colUserName.DataPropertyName = "Username";
             this.colUserName.HeaderText = "Username";
+            this.colUserName.MinimumWidth = 6;
             this.colUserName.Name = "colUserName";
             this.colUserName.Visible = false;
+            this.colUserName.Width = 125;
             // 
             // colPassword
             // 
             this.colPassword.DataPropertyName = "Password";
             this.colPassword.HeaderText = "Password";
+            this.colPassword.MinimumWidth = 6;
             this.colPassword.Name = "colPassword";
             this.colPassword.Visible = false;
+            this.colPassword.Width = 125;
             // 
             // bttChiTiet
             // 
-            this.bttChiTiet.Location = new System.Drawing.Point(17, 355);
+            this.bttChiTiet.Location = new System.Drawing.Point(23, 437);
+            this.bttChiTiet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bttChiTiet.Name = "bttChiTiet";
-            this.bttChiTiet.Size = new System.Drawing.Size(150, 23);
+            this.bttChiTiet.Size = new System.Drawing.Size(200, 28);
             this.bttChiTiet.TabIndex = 5;
             this.bttChiTiet.Text = "Xem đầy đủ thông tin";
             this.bttChiTiet.UseVisualStyleBackColor = true;
@@ -302,9 +335,10 @@ namespace QuanLyThuVIen.GUI
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(186, 355);
+            this.button2.Location = new System.Drawing.Point(248, 437);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 23);
+            this.button2.Size = new System.Drawing.Size(200, 28);
             this.button2.TabIndex = 6;
             this.button2.Text = "Thêm độc giả mới";
             this.button2.UseVisualStyleBackColor = true;
@@ -313,9 +347,10 @@ namespace QuanLyThuVIen.GUI
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.Location = new System.Drawing.Point(712, 355);
+            this.button3.Location = new System.Drawing.Point(949, 437);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(100, 28);
             this.button3.TabIndex = 7;
             this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = false;
@@ -324,9 +359,10 @@ namespace QuanLyThuVIen.GUI
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button4.Location = new System.Drawing.Point(631, 355);
+            this.button4.Location = new System.Drawing.Point(841, 437);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(100, 28);
             this.button4.TabIndex = 7;
             this.button4.Text = "Chỉnh sửa";
             this.button4.UseVisualStyleBackColor = false;
@@ -336,17 +372,19 @@ namespace QuanLyThuVIen.GUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(462, 43);
+            this.label2.Location = new System.Drawing.Point(616, 53);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
+            this.label2.Size = new System.Drawing.Size(72, 17);
             this.label2.TabIndex = 8;
             this.label2.Text = "Tìm kiếm";
             // 
             // UserDocGia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 400);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1073, 492);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -359,6 +397,7 @@ namespace QuanLyThuVIen.GUI
             this.Controls.Add(this.cbbTrangThai);
             this.Controls.Add(this.cbbGioiTinh);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UserDocGia";
             this.Text = "Độc giả";
             ((System.ComponentModel.ISupportInitialize)(this.GridDocGia)).EndInit();
