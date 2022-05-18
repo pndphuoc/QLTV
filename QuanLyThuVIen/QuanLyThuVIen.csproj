@@ -66,6 +66,7 @@
     <Compile Include="Data\DataKhoa.cs" />
     <Compile Include="Data\DataLoaiSach.cs" />
     <Compile Include="Data\DataNgonNgu.cs" />
+    <Compile Include="Data\DataNguoiDung.cs" />
     <Compile Include="Data\DataNXB.cs" />
     <Compile Include="Data\DataSach.cs" />
     <Compile Include="Data\DataTacGia.cs" />
@@ -74,6 +75,12 @@
     <Compile Include="Data\DbUtils.cs" />
     <Compile Include="Data\DataDocGia_MuonSach.cs" />
     <Compile Include="Data\LichSuMuonTra.cs" />
+    <Compile Include="GUI\AddThuThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddThuThu.designer.cs">
+      <DependentUpon>AddThuThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\BookManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +99,12 @@
     <Compile Include="GUI\EditTacGia.Designer.cs">
       <DependentUpon>EditTacGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\EditThuThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EditThuThu.designer.cs">
+      <DependentUpon>EditThuThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormGiaHan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +116,30 @@
     </Compile>
     <Compile Include="GUI\FormTraSach.Designer.cs">
       <DependentUpon>FormTraSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\LoginForm.designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ResetPassword.designer.cs">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SendCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\SendCode.designer.cs">
+      <DependentUpon>SendCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\TaikhoanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\TaikhoanForm.designer.cs">
+      <DependentUpon>TaikhoanForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserDocGia.cs">
       <SubType>Form</SubType>
@@ -159,6 +196,12 @@
     <Compile Include="GUI\UserThemDocGia.Designer.cs">
       <DependentUpon>UserThemDocGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserThuThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UserThuThu.designer.cs">
+      <DependentUpon>UserThuThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserXemThongTin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,11 +211,13 @@
     <Compile Include="Model\ChiTietMuon.cs" />
     <Compile Include="Model\ChiTietSachMuon.cs" />
     <Compile Include="Model\ChucDanh.cs" />
+    <Compile Include="Model\ChucVu.cs" />
     <Compile Include="Model\DocGia.cs" />
     <Compile Include="Model\DocGia_MuonSach.cs" />
     <Compile Include="Model\Khoa.cs" />
     <Compile Include="Model\LichSuMuon.cs" />
     <Compile Include="Model\NgonNgu.cs" />
+    <Compile Include="Model\NguoiDung.cs" />
     <Compile Include="Model\NhaXuatBan.cs" />
     <Compile Include="Model\Sach.cs" />
     <Compile Include="Model\SachForSelect.cs" />
@@ -182,6 +227,9 @@
     <Compile Include="Model\TrangThai.cs" />
     <Compile Include="Model\ViPham.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\AddThuThu.resx">
+      <DependentUpon>AddThuThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\BookManagerForm.resx">
       <DependentUpon>BookManagerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,11 +239,26 @@
     <EmbeddedResource Include="GUI\EditTacGia.resx">
       <DependentUpon>EditTacGia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EditThuThu.resx">
+      <DependentUpon>EditThuThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormGiaHan.resx">
       <DependentUpon>FormGiaHan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormTraSach.resx">
       <DependentUpon>FormTraSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ResetPassword.resx">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SendCode.resx">
+      <DependentUpon>SendCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TaikhoanForm.resx">
+      <DependentUpon>TaikhoanForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserDocGia.resx">
       <DependentUpon>UserDocGia.cs</DependentUpon>
@@ -223,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserThemDocGia.resx">
       <DependentUpon>UserThemDocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserThuThu.resx">
+      <DependentUpon>UserThuThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserXemThongTin.resx">
       <DependentUpon>UserXemThongTin.cs</DependentUpon>
@@ -253,6 +319,29 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\Sach\images.jpg" />
+    <Content Include="Resources\andrej-lisakov-fGZ2x8wFxC0-unsplash.jpg" />
+    <Content Include="Resources\Big Shoes - Torso.png" />
+    <Content Include="Resources\book-stack %281%29.png" />
+    <Content Include="Resources\book-stack.png" />
+    <Content Include="Resources\books.png" />
+    <Content Include="Resources\books1.png" />
+    <Content Include="Resources\email-marketing.png" />
+    <Content Include="Resources\grass.png" />
+    <Content Include="Resources\home.png" />
+    <Content Include="Resources\istockphoto-1009513690-612x612.jpg" />
+    <Content Include="Resources\love.png" />
+    <Content Include="Resources\man.png" />
+    <Content Include="Resources\mariia-zakatiura-t7zYZzO_CX0-unsplash.jpg" />
+    <Content Include="Resources\padlock.png" />
+    <Content Include="Resources\read.png" />
+    <Content Include="Resources\resul-mentes-DbwYNr8RPbg-unsplash.jpg" />
+    <Content Include="Resources\thought-catalog-o0Qqw21-0NI-unsplash.jpg" />
+    <Content Include="Resources\tick-mark.png" />
+    <Content Include="Resources\welcome %281%29.png" />
+    <Content Include="Resources\welcome-back.png" />
+    <Content Include="Resources\welcome-to-team-megaphone-blue-banner-d-style-white-background-vector-illustration-welcome-to-team-megaphone-blue-208949857.jpg" />
+    <Content Include="Resources\welcome.png" />
+    <Content Include="Resources\zaini-izzuddin-55btQzyDiO8-unsplash.jpg" />
     <None Include="Resources\gai.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

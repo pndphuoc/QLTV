@@ -15,12 +15,17 @@ namespace QuanLyThuVIen
 {
     public partial class FormMain : Form
     {
+        public int Manguoi;
         int MaSachGlobal { get; set; }
         public FormMain()
         {
             InitializeComponent();
         }
-       
+        public FormMain(int Manguoidung)
+        {
+            Manguoi = Manguoidung;
+            InitializeComponent();
+        }
         public void loadForm(object Form)
         {
             if (this.mainPanel.Controls.Count > 0)
@@ -50,6 +55,11 @@ namespace QuanLyThuVIen
         {
             loadForm(new UserManagerForm());
             
+        }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            loadForm(new TaikhoanForm(Manguoi));
         }
 
 

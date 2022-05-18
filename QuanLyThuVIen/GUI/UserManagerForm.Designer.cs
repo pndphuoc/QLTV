@@ -56,7 +56,7 @@ namespace QuanLyThuVIen.GUI
             this.bttThuThu.TabIndex = 0;
             this.bttThuThu.Text = "Thủ thư";
             this.bttThuThu.UseVisualStyleBackColor = true;
-            this.bttThuThu.Click += new System.EventHandler(this.button1_Click);
+            this.bttThuThu.Click += new System.EventHandler(this.button2_Click);
             // 
             // bttQuanLy
             // 
