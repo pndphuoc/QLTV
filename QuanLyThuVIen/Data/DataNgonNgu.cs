@@ -10,10 +10,6 @@ namespace QuanLyThuVIen.Data
 {
     public class DataNgonNgu
     {
-        /// <summary>
-        /// Lấy danh sách ngôn ngữ
-        /// </summary>
-        /// <returns></returns>
         public List<NgonNgu> GetListNgonNgu()
         {
 
@@ -24,11 +20,7 @@ namespace QuanLyThuVIen.Data
                     return lstNgonNgu;
                 }           
         }
-        /// <summary>
-        /// Lấy thông tin 1 ngôn ngữ
-        /// </summary>
-        /// <param name="MaNgonNgu"></param>
-        /// <returns></returns>
+
         public NgonNgu GetNgonNgu(int MaNgonNgu)
         {
             using (var cnn = DbUtils.GetConnection())

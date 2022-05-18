@@ -10,75 +10,189 @@ namespace QuanLyThuVIen.Data
 {
     public class DataDocGia
     {
-        /// <summary>
-        /// Lấy danh sách độc giả
-        /// </summary>
-        /// <returns></returns>
         public List<DocGia> GetListDocGia()
         {
             using (var cnn = DbUtils.GetConnection())
             {
-                //var sql = @"SELECT s.MaSach, s.TenSach,nxb.MaNhaXuatBan, nxb.TenNhaXuatBan, s.DonGia, s.MaNgonNgu, s.NamXuatBan, s.SoLuong, s.SoTaiBan,s.TinhTrang 
-                //            from Sach as s inner join NhaXuatBan as nxb on nxb.MaNhaXuatBan = s.MaNhaXuatBan";
                 var sql = "select * from DocGia";
-                var lstDocGia = cnn.Query<DocGia>(sql).ToList();
-                return lstDocGia;
+                var lstSach = cnn.Query<DocGia>(sql).ToList();
+                return lstSach;
             }
         }
-        /// <summary>
-        /// Lấy thông tin 1 độc giả theo mã độc giả
-        /// </summary>
-        /// <param name="MaDocGia"></param>
-        /// <returns></returns>
+        public List<DocGia> GetListDocGia1(int MaKhoa)
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                var sql = "select * from DocGia where MaKhoa=@MaKhoa";
+                var param = new
+                {
+                    MaKhoa = MaKhoa
+                };
+                var lstSach = cnn.Query<DocGia>(sql, param).ToList();
+                return lstSach;
+            }
+        }
+        public List<DocGia> GetListDocGia2(int MaChucDanh)
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                var sql = "select * from DocGia where MaChucDanh=@MaChucDanh";
+                var param = new
+                {
+                    MaChucDanh = MaChucDanh
+                };
+                var lstSach = cnn.Query<DocGia>(sql, param).ToList();
+                return lstSach;
+            }
+        }
+
+        public List<DocGia> GetListDocGia3(int MaTrangThai)
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                var sql = "select * from DocGia where MaTrangThai=@MaTrangThai";
+                var param = new
+                {
+                    MaTrangThai = MaTrangThai
+                };
+                var lstSach = cnn.Query<DocGia>(sql, param).ToList();
+                return lstSach;
+            }
+        }
         public DocGia GetDocGia(int MaDocGia)
         {
             using (var cnn = DbUtils.GetConnection())
             {
-                //var sql = @"SELECT s.MaSach, s.TenSach,nxb.MaNhaXuatBan, nxb.TenNhaXuatBan, s.DonGia, s.MaNgonNgu, s.NamXuatBan, s.SoLuong, s.SoTaiBan,s.TinhTrang 
-                //            from Sach as s inner join NhaXuatBan as nxb on nxb.MaNhaXuatBan = s.MaNhaXuatBan";
-                try
+                var sql = "select * from DocGia where MaDocGia=@MaDocGia";
+                var param = new
                 {
+                    MaDocGia = MaDocGia
+                };
+                var lstSach = cnn.Query<DocGia>(sql, param).ToList();
+                return lstSach[0];
+            }
+        }
+        public List<DocGia> TimkiemDocGia (string searchValue)
+        {
+            if (searchValue != null)
+            {
+                searchValue = "%"+searchValue+"%";
+            }
+            using (var cnn = DbUtils.GetConnection())
+            {
 
-                var sql = "select * from DocGia where MaDocGia = @MaDocGia";
+                var sql = "select * from DocGia where TenDocGia like @searchValue";
+                var param = new
+                {
+                    searchValue = searchValue
+                };
+                var lstSach = cnn.Query<DocGia>(sql, param).ToList();
+                return lstSach;
+            }
+        }
+        public bool Insert(DocGia DG)
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                var sql = @"INSERT INTO DocGia (TenDocGia,NgaySinh,MaChucDanh, GioiTinh,Email,DiaChi, SoDienThoai, NgayDangKy,NgayHetHan,Lop,MaKhoa,KhoaHoc,UserName,Password,MaTrangThai)
+                    VALUES (@TenDocGia,@NgaySinh,@MaChucDanh, @GioiTinh,@Email,@DiaChi, @SoDienThoai, @NgayDangKy,@NgayHetHan,@Lop,@MaKhoa,@KhoaHoc,@UserName,@Password,1)";
+
+                var param = new
+                {
+                    TenDocGia = DG.TenDocGia,
+                    NgaySinh = DG.NgaySinh,
+                    MaChucDanh = DG.MaChucDanh,
+                    GioiTinh = DG.GioiTinh,
+                    Email = DG.Email,
+                    DiaChi = DG.DiaChi,
+                    SoDienThoai = DG.SoDienThoai,
+                    NgayDangKy = DG.NgayDangKy,
+                    NgayHetHan = DG.NgayHetHan,
+                    Lop = DG.Lop,
+                    MaKhoa = DG.MaKhoa ,
+                    KhoaHoc = DG.KhoaHoc ,
+                    UserName= DG.Username,
+                    Password = DG.Password
+                };
+
+                int nEffectedRows = cnn.Execute(sql, param);
+
+                //int nEffectedRows = cnn.Execute("sp_Sach_Insert", param, commandType: CommandType.StoredProcedure);
+
+                return nEffectedRows == 1;
+            }
+        }
+        public bool Update(DocGia DG)
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                var sql = @"update DocGia set TenDocGia=@TenDocGia,NgaySinh=@NgaySinh,MaChucDanh=@MaChucDanh,GioiTinh=@GioiTinh,
+                            Email=@Email,DiaChi=@DiaChi,SoDienThoai=@SoDienThoai,NgayDangKy=@NgayDangKy,NgayHetHan=@NgayHetHan,
+                            Lop=@Lop,MaKhoa=@MaKhoa,KhoaHoc=@KhoaHoc,Username=@Username,Password=@Password,MaTrangThai=@MaTrangThai
+                            where MaDocGia=@MaDocGia";
+
+                var param = new
+                {
+                    TenDocGia = DG.TenDocGia,
+                    NgaySinh = DG.NgaySinh,
+                    MaChucDanh = DG.MaChucDanh,
+                    GioiTinh = DG.GioiTinh,
+                    Email = DG.Email,
+                    DiaChi = DG.DiaChi,
+                    SoDienThoai = DG.SoDienThoai,
+                    NgayDangKy = DG.NgayDangKy,
+                    NgayHetHan = DG.NgayHetHan,
+                    Lop = DG.Lop,
+                    MaKhoa = DG.MaKhoa,
+                    KhoaHoc = DG.KhoaHoc,
+                    UserName = DG.Username,
+                    Password = DG.Password,
+                    MaDocGia=DG.MaDocGia,
+                    MaTrangThai=DG.MaTrangThai
+                };
+
+                int nEffectedRows = cnn.Execute(sql, param);
+
+                //int nEffectedRows = cnn.Execute("sp_Sach_Insert", param, commandType: CommandType.StoredProcedure);
+
+                return nEffectedRows == 1;
+            }
+        }
+        public bool DeleteDG(int MaDocGia)
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                var sql = @"Delete from DocGia where MaDocGia=@MaDocGia";
+
                 var param = new
                 {
                     MaDocGia = MaDocGia
                 };
 
-                var lstDocGia = cnn.Query<DocGia>(sql, param).ToList();
-                return lstDocGia[0];
-                }
-                catch (Exception ex)
-                {
-                    throw new ArgumentException("Index is out of range", nameof(MaDocGia), ex);
-                }
-            }
-        }
+                int nEffectedRows = cnn.Execute(sql, param);
 
-        public int MaxOfMaDocGia()
+                //int nEffectedRows = cnn.Execute("sp_Sach_Insert", param, commandType: CommandType.StoredProcedure);
+
+                return nEffectedRows == 1;
+            }
+
+        }
+        public int InUsedDG(int MaDocGia)
         {
             using (var cnn = DbUtils.GetConnection())
             {
-                var sql = @"select Max(MaDocGia) from DocGia";
+                var sql = @"Select count(*) from ChiTietMuon where TrangThai=1 and MaDocGia=@MaDocGia";
 
-                
-
-                int result = Convert.ToInt32(cnn.ExecuteScalar(sql));
-                return result;
-            }
-        }
-
-        public int GetMaDocGia(int MaChiTietMuon)
-        {
-            using (var cnn = DbUtils.GetConnection())
-            {
-                var sql = @"select MaDocGia from ChiTietMuon where MaChiTietMuon = @MaChiTietMuon";
                 var param = new
                 {
-                    MaChiTietMuon = MaChiTietMuon
+                    MaDocGia = MaDocGia
                 };
-                int MaDocGia = Convert.ToInt32(cnn.ExecuteScalar(sql, param));
-                return MaDocGia;
+
+                int nEffectedRows = Convert.ToInt32(cnn.ExecuteScalar(sql, param));
+
+                //int nEffectedRows = cnn.Execute("sp_Sach_Insert", param, commandType: CommandType.StoredProcedure);
+
+                return nEffectedRows;
             }
         }
     }

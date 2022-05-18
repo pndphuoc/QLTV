@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using QuanLyThuVIen.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace QuanLyThuVIen.Data
 {
-    public class DataDocGia_MuonSach
+    public class DataTrangThai
     {
-        public List<DataDocGia_MuonSach> GetListDocGiaMuonSach()
+        public List<TrangThai> GetListTrangThai()
         {
             using (var cnn = DbUtils.GetConnection())
             {
-                var sql = "select * from Sach";
-                var lstSach = cnn.Query<DataDocGia_MuonSach>(sql).ToList();
-                return lstSach;
+                var sql = "select * from TrangThai";
+                var lstKhoa = cnn.Query<TrangThai>(sql).ToList();
+                return lstKhoa;
             }
         }
     }
