@@ -19,15 +19,13 @@ namespace QuanLyThuVIen.GUI
         public MuonTraForm()
         {
             InitializeComponent();
-            DataDocGia_MuonSach dataDGMS = new DataDocGia_MuonSach();
-            ///Lấy danh sách các độc giả đang mượn cách
-            var lstDGMS = dataDGMS.GetListDocGiaMuonSach();
+            DataDocGia_MuonSach dtDGMS = new DataDocGia_MuonSach();
+            var lst = dtDGMS.GetListDocGiaMuonSach();
 
-            //Gán dữ liệu cho GridDataView
-            bsMuonSach.DataSource = lstDGMS;
+            bsMuonSach.DataSource = lst;
+
             gridMuon.DataSource = bsMuonSach;
-            gridMuon.AutoGenerateColumns = false;
-
+            
 
         }
 
@@ -38,8 +36,8 @@ namespace QuanLyThuVIen.GUI
 
             //Gán dữ liệu cho GridDataView
             bsMuonSach.DataSource = lstDGMS;
-            gridMuon.DataSource = bsMuonSach;
-            gridMuon.AutoGenerateColumns = false;
+            gridMuon.DataSource = lstDGMS;
+            gridMuon.AutoGenerateColumns = true;
         }
         private void MuonTraForm_Load(object sender, EventArgs e)
         {

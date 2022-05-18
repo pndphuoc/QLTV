@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.gridMuon = new System.Windows.Forms.DataGridView();
-            this.colMaDocGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaChiTietMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDocGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HanTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.cbQuaHan = new System.Windows.Forms.CheckBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -82,84 +75,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lbChonSach = new System.Windows.Forms.ListBox();
             this.labelQuaHan = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.gridMuon)).BeginInit();
+            this.gridMuon = new System.Windows.Forms.DataGridView();
+            this.MaDocGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaChiTietMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDocGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HanTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsMuonSach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMuon)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gridMuon
-            // 
-            this.gridMuon.AllowUserToAddRows = false;
-            this.gridMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridMuon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaDocGia,
-            this.MaChiTietMuon,
-            this.TenDocGia,
-            this.NgayMuon,
-            this.SoLuongMuon,
-            this.HanTra});
-            this.gridMuon.Location = new System.Drawing.Point(91, 110);
-            this.gridMuon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridMuon.Name = "gridMuon";
-            this.gridMuon.RowHeadersWidth = 51;
-            this.gridMuon.RowTemplate.Height = 24;
-            this.gridMuon.Size = new System.Drawing.Size(1021, 356);
-            this.gridMuon.TabIndex = 0;
-            this.gridMuon.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridMuon_CellMouseClick);
-            // 
-            // colMaDocGia
-            // 
-            this.colMaDocGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colMaDocGia.DataPropertyName = "MaDocGia";
-            this.colMaDocGia.HeaderText = "MaDocGia";
-            this.colMaDocGia.MinimumWidth = 6;
-            this.colMaDocGia.Name = "colMaDocGia";
-            this.colMaDocGia.ReadOnly = true;
-            this.colMaDocGia.Visible = false;
-            // 
-            // MaChiTietMuon
-            // 
-            this.MaChiTietMuon.DataPropertyName = "MaChiTietMuon";
-            this.MaChiTietMuon.HeaderText = "Mã phiếu mượn";
-            this.MaChiTietMuon.MinimumWidth = 6;
-            this.MaChiTietMuon.Name = "MaChiTietMuon";
-            this.MaChiTietMuon.ReadOnly = true;
-            this.MaChiTietMuon.Width = 150;
-            // 
-            // TenDocGia
-            // 
-            this.TenDocGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TenDocGia.DataPropertyName = "TenDocGia";
-            this.TenDocGia.HeaderText = "Tên độc giả";
-            this.TenDocGia.MinimumWidth = 6;
-            this.TenDocGia.Name = "TenDocGia";
-            this.TenDocGia.ReadOnly = true;
-            // 
-            // NgayMuon
-            // 
-            this.NgayMuon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NgayMuon.DataPropertyName = "NgayMuon";
-            this.NgayMuon.HeaderText = "Ngày mượn";
-            this.NgayMuon.MinimumWidth = 6;
-            this.NgayMuon.Name = "NgayMuon";
-            this.NgayMuon.ReadOnly = true;
-            // 
-            // SoLuongMuon
-            // 
-            this.SoLuongMuon.DataPropertyName = "SoLuongMuon";
-            this.SoLuongMuon.HeaderText = "SL";
-            this.SoLuongMuon.MinimumWidth = 6;
-            this.SoLuongMuon.Name = "SoLuongMuon";
-            this.SoLuongMuon.ReadOnly = true;
-            this.SoLuongMuon.Width = 50;
-            // 
-            // HanTra
-            // 
-            this.HanTra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.HanTra.DataPropertyName = "HanTra";
-            this.HanTra.HeaderText = "Hạn trả";
-            this.HanTra.MinimumWidth = 6;
-            this.HanTra.Name = "HanTra";
-            this.HanTra.ReadOnly = true;
             // 
             // label1
             // 
@@ -624,11 +549,85 @@
             this.labelQuaHan.Text = "Quá hạn";
             this.labelQuaHan.Visible = false;
             // 
+            // gridMuon
+            // 
+            this.gridMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridMuon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaDocGia,
+            this.MaChiTietMuon,
+            this.TenDocGia,
+            this.NgayMuon,
+            this.SoLuong,
+            this.HanTra});
+            this.gridMuon.Location = new System.Drawing.Point(90, 108);
+            this.gridMuon.Name = "gridMuon";
+            this.gridMuon.RowHeadersWidth = 51;
+            this.gridMuon.RowTemplate.Height = 24;
+            this.gridMuon.Size = new System.Drawing.Size(1024, 371);
+            this.gridMuon.TabIndex = 85;
+            this.gridMuon.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridMuon_CellMouseClick);
+            // 
+            // MaDocGia
+            // 
+            this.MaDocGia.DataPropertyName = "MaDocGia";
+            this.MaDocGia.HeaderText = "Mã độc giả";
+            this.MaDocGia.MinimumWidth = 6;
+            this.MaDocGia.Name = "MaDocGia";
+            this.MaDocGia.ReadOnly = true;
+            this.MaDocGia.Visible = false;
+            this.MaDocGia.Width = 125;
+            // 
+            // MaChiTietMuon
+            // 
+            this.MaChiTietMuon.DataPropertyName = "MaChiTietMuon";
+            this.MaChiTietMuon.HeaderText = "Mã phiếu mượn";
+            this.MaChiTietMuon.MinimumWidth = 6;
+            this.MaChiTietMuon.Name = "MaChiTietMuon";
+            this.MaChiTietMuon.ReadOnly = true;
+            this.MaChiTietMuon.Width = 125;
+            // 
+            // TenDocGia
+            // 
+            this.TenDocGia.DataPropertyName = "TenDocGia";
+            this.TenDocGia.HeaderText = "Tên độc giả";
+            this.TenDocGia.MinimumWidth = 6;
+            this.TenDocGia.Name = "TenDocGia";
+            this.TenDocGia.ReadOnly = true;
+            this.TenDocGia.Width = 125;
+            // 
+            // NgayMuon
+            // 
+            this.NgayMuon.DataPropertyName = "NgayMuon";
+            this.NgayMuon.HeaderText = "Ngày mượn";
+            this.NgayMuon.MinimumWidth = 6;
+            this.NgayMuon.Name = "NgayMuon";
+            this.NgayMuon.ReadOnly = true;
+            this.NgayMuon.Width = 125;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuongMuon";
+            this.SoLuong.HeaderText = "SL";
+            this.SoLuong.MinimumWidth = 6;
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
+            this.SoLuong.Width = 125;
+            // 
+            // HanTra
+            // 
+            this.HanTra.DataPropertyName = "HanTra";
+            this.HanTra.HeaderText = "Hạn trả";
+            this.HanTra.MinimumWidth = 6;
+            this.HanTra.Name = "HanTra";
+            this.HanTra.ReadOnly = true;
+            this.HanTra.Width = 125;
+            // 
             // MuonTraForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 933);
+            this.Controls.Add(this.gridMuon);
             this.Controls.Add(this.labelQuaHan);
             this.Controls.Add(this.lbChonSach);
             this.Controls.Add(this.button1);
@@ -674,23 +673,20 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.cbQuaHan);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.gridMuon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MuonTraForm";
             this.Text = "MuonTraForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MuonTraForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridMuon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMuonSach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMuon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView gridMuon;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox cbQuaHan;
         private System.Windows.Forms.TextBox txtSearch;
@@ -737,11 +733,12 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox lbChonSach;
         private System.Windows.Forms.Label labelQuaHan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaDocGia;
+        private System.Windows.Forms.DataGridView gridMuon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDocGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaChiTietMuon;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDocGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayMuon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongMuon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn HanTra;
     }
 }

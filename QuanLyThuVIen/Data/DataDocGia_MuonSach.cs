@@ -12,9 +12,10 @@ namespace QuanLyThuVIen.Data
     {
         public List<DocGia_MuonSach> GetListDocGiaMuonSach()
         {
-            using (var cnn = DbUtils.GetConnection())
+            using(var cnn = DbUtils.GetConnection())
             {
-                var sql = "select * from Sach";
+                var sql = @"select dg.MaDocGia, ctm.MaChiTietMuon, dg.TenDocGia, ctm.NgayMuon, ctm.SoLuongMuon, ctm.HanTra
+                            from DocGia as dg join ChiTietMuon as ctm on ctm.MaDocGia = dg.MaDocGia where ctm.TrangThai = 0";
                 var lstSach = cnn.Query<DocGia_MuonSach>(sql).ToList();
                 return lstSach;
             }
