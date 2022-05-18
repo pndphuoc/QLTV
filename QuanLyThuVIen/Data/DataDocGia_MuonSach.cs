@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using QuanLyThuVIen.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +10,41 @@ namespace QuanLyThuVIen.Data
 {
     public class DataDocGia_MuonSach
     {
-        public List<DataDocGia_MuonSach> GetListDocGiaMuonSach()
+        public List<DocGia_MuonSach> GetListDocGiaMuonSach()
         {
             using (var cnn = DbUtils.GetConnection())
             {
                 var sql = "select * from Sach";
-                var lstSach = cnn.Query<DataDocGia_MuonSach>(sql).ToList();
+                var lstSach = cnn.Query<DocGia_MuonSach>(sql).ToList();
+                return lstSach;
+            }
+        }
+        public List<DocGia_MuonSach> GetListQuaHan()
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                var sql = @"select dg.MaDocGia, ctm.MaChiTietMuon, dg.TenDocGia, ctm.NgayMuon, ctm.SoLuongMuon, ctm.HanTra, ctm.TrangThai 
+                            from DocGia as dg join ChiTietMuon as ctm on ctm.MaDocGia = dg.MaDocGia where DATEADD(dd, 0, DATEDIFF(dd, 0, GETDATE()))> ctm.HanTra and ctm.TrangThai = 0";
+                var lstSach = cnn.Query<DocGia_MuonSach>(sql).ToList();
+                return lstSach;
+            }
+        }
+        public List<DocGia_MuonSach> Search(string searchValue)
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                string search = "%" + searchValue + "%";
+                var sql = @"select dg.MaDocGia, ctm.MaChiTietMuon, dg.TenDocGia, ctm.NgayMuon, ctm.SoLuongMuon, ctm.HanTra, ctm.TrangThai 
+                            from DocGia as dg join ChiTietMuon as ctm on ctm.MaDocGia = dg.MaDocGia
+                            where ctm.MaChiTietMuon like @searchValue or dg.TenDocGia like @search";
+
+                var param = new
+                {
+                    searchValue = searchValue,
+                    search = search
+                };
+
+                var lstSach = cnn.Query<DocGia_MuonSach>(sql, param).ToList();
                 return lstSach;
             }
         }

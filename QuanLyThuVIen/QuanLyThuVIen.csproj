@@ -59,6 +59,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\DataChiTietMuon.cs" />
+    <Compile Include="Data\DataChiTietTra.cs" />
     <Compile Include="Data\DataChucDanh.cs" />
     <Compile Include="Data\DataDocGia.cs" />
     <Compile Include="Data\DataKhoa.cs" />
@@ -68,6 +70,7 @@
     <Compile Include="Data\DataSach.cs" />
     <Compile Include="Data\DataTacGia.cs" />
     <Compile Include="Data\DataTrangThai.cs" />
+    <Compile Include="Data\DataViPham.cs" />
     <Compile Include="Data\DbUtils.cs" />
     <Compile Include="Data\DataDocGia_MuonSach.cs" />
     <Compile Include="Data\LichSuMuonTra.cs" />
@@ -77,11 +80,29 @@
     <Compile Include="GUI\BookManagerForm.Designer.cs">
       <DependentUpon>BookManagerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ChonSachForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChonSachForm.Designer.cs">
+      <DependentUpon>ChonSachForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\EditTacGia.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\EditTacGia.Designer.cs">
       <DependentUpon>EditTacGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormGiaHan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormGiaHan.Designer.cs">
+      <DependentUpon>FormGiaHan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormTraSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormTraSach.Designer.cs">
+      <DependentUpon>FormTraSach.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserDocGia.cs">
       <SubType>Form</SubType>
@@ -145,6 +166,7 @@
       <DependentUpon>UserXemThongTin.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\ChiTietMuon.cs" />
+    <Compile Include="Model\ChiTietSachMuon.cs" />
     <Compile Include="Model\ChucDanh.cs" />
     <Compile Include="Model\DocGia.cs" />
     <Compile Include="Model\DocGia_MuonSach.cs" />
@@ -153,16 +175,27 @@
     <Compile Include="Model\NgonNgu.cs" />
     <Compile Include="Model\NhaXuatBan.cs" />
     <Compile Include="Model\Sach.cs" />
+    <Compile Include="Model\SachForSelect.cs" />
     <Compile Include="Model\SachResponse.cs" />
     <Compile Include="Model\TacGia.cs" />
     <Compile Include="Model\LoaiSach.cs" />
     <Compile Include="Model\TrangThai.cs" />
+    <Compile Include="Model\ViPham.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\BookManagerForm.resx">
       <DependentUpon>BookManagerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChonSachForm.resx">
+      <DependentUpon>ChonSachForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\EditTacGia.resx">
       <DependentUpon>EditTacGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormGiaHan.resx">
+      <DependentUpon>FormGiaHan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormTraSach.resx">
+      <DependentUpon>FormTraSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserDocGia.resx">
       <DependentUpon>UserDocGia.cs</DependentUpon>

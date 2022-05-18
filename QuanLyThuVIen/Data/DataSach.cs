@@ -11,6 +11,18 @@ namespace QuanLyThuVIen.Data
 {
     public class DataSach
     {
+        public List<SachForSelect> GetListSachConTrongThuVien()
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                var sql = @"SELECT s.MaSach, s.TenSach,nxb.TenNhaXuatBan, s.SoLuongCon
+                from Sach as s inner join NhaXuatBan as nxb on nxb.MaNhaXuatBan = s.MaNhaXuatBan
+                where s.SoLuongCon > 0";
+
+                var lstSach = cnn.Query<SachForSelect>(sql).ToList();
+                return lstSach;
+            }
+        }
         public List<Sach> GetListSach()
         {
             using (var cnn = DbUtils.GetConnection())
@@ -19,6 +31,22 @@ namespace QuanLyThuVIen.Data
                 //            from Sach as s inner join NhaXuatBan as nxb on nxb.MaNhaXuatBan = s.MaNhaXuatBan";
                 var sql = "select * from Sach";
                 var lstSach = cnn.Query<Sach>(sql).ToList();
+                return lstSach;
+            }
+        }
+        public List<Sach> GetListSach(int MaChiTietMuon)
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                //var sql = @"SELECT s.MaSach, s.TenSach,nxb.MaNhaXuatBan, nxb.TenNhaXuatBan, s.DonGia, s.MaNgonNgu, s.NamXuatBan, s.SoLuong, s.SoTaiBan,s.TinhTrang 
+                //            from Sach as s inner join NhaXuatBan as nxb on nxb.MaNhaXuatBan = s.MaNhaXuatBan";
+                var sql = "select * from Sach_ChiTietMuon as sctm join Sach as s on s.MaSach = sctm.MaSach where sctm.MaChiTietMuon = @MaChiTietMuon and sctm.TrangThai = 0";
+                var param = new
+                {
+                    @MaChiTietMuon = MaChiTietMuon
+                };
+                var lstSach = cnn.Query<Sach>(sql, param).ToList();
+
                 return lstSach;
             }
         }
@@ -134,6 +162,50 @@ namespace QuanLyThuVIen.Data
                 };
 
                 var lstSach = cnn.Query<SachResponse>(sql, param).ToList();
+                return lstSach;
+            }
+        }
+        public List<SachForSelect> GetSachForSelect()
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                var sql = @"SELECT s.MaSach, s.TenSach,nxb.TenNhaXuatBan, s.SoLuongCon
+                            from Sach as s inner join NhaXuatBan as nxb on nxb.MaNhaXuatBan = s.MaNhaXuatBan";
+                var lstSach = cnn.Query<SachForSelect>(sql).ToList();
+                return lstSach;
+            }
+        }
+
+        public List<SachForSelect> GetSachForSelect(int MaChiTietMuon)
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                var sql = @"SELECT s.MaSach, s.TenSach,nxb.TenNhaXuatBan, s.SoLuongCon
+                            from Sach as s inner join NhaXuatBan as nxb on nxb.MaNhaXuatBan = s.MaNhaXuatBan
+                                join Sach_ChiTietMuon as sctm on sctm.MaSach = s.MaSach where sctm.MaChiTietMuon = @MaChiTietMuon and sctm.TrangThai = 0";
+                var param = new
+                {
+                    MaChiTietMuon = MaChiTietMuon
+                };
+                var lstSach = cnn.Query<SachForSelect>(sql, param).ToList();
+                return lstSach;
+            }
+        }
+        public List<SachForSelect> SearchSachForSelect(string tenSach)
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                string search = "%" + tenSach + "%";
+                var sql = @"SELECT s.MaSach, s.TenSach,nxb.TenNhaXuatBan, s.SoLuongCon
+                from Sach as s inner join NhaXuatBan as nxb on nxb.MaNhaXuatBan = s.MaNhaXuatBan
+                where TenSach like @TenSach";
+
+                var param = new
+                {
+                    TenSach = search
+                };
+
+                var lstSach = cnn.Query<SachForSelect>(sql, param).ToList();
                 return lstSach;
             }
         }

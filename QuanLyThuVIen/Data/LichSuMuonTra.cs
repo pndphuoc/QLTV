@@ -23,7 +23,7 @@ namespace QuanLyThuVIen.Data
                 return lstSach;
             }
         }
-        public List<ChiTietMuon> ListCTMuon(int MaChiTietMuon)
+        public List<ChiTietSachMuon> ListCTMuon(int MaChiTietMuon)
         {
             using (var cnn = DbUtils.GetConnection())
             {
@@ -32,7 +32,7 @@ namespace QuanLyThuVIen.Data
                 {
                     MaChiTietMuon = MaChiTietMuon
                 };
-                var lstSach = cnn.Query<ChiTietMuon>(sql, param).ToList();
+                var lstSach = cnn.Query<ChiTietSachMuon>(sql, param).ToList();
                 return lstSach;
             }
         }

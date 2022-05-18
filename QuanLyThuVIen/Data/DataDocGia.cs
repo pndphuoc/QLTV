@@ -10,6 +10,19 @@ namespace QuanLyThuVIen.Data
 {
     public class DataDocGia
     {
+        public int GetMaDocGia(int MaChiTietMuon)
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                var sql = @"select MaDocGia from ChiTietMuon where MaChiTietMuon = @MaChiTietMuon";
+                var param = new
+                {
+                    MaChiTietMuon = MaChiTietMuon
+                };
+                int MaDocGia = Convert.ToInt32(cnn.ExecuteScalar(sql, param));
+                return MaDocGia;
+            }
+        }
         public List<DocGia> GetListDocGia()
         {
             using (var cnn = DbUtils.GetConnection())
@@ -195,5 +208,15 @@ namespace QuanLyThuVIen.Data
                 return nEffectedRows;
             }
         }
+        public int MaxOfMaDocGia()
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                var sql = @"select Max(MaDocGia) from DocGia";
+                int result = Convert.ToInt32(cnn.ExecuteScalar(sql));
+                return result;
+            }
+        }
+
     }
 }
