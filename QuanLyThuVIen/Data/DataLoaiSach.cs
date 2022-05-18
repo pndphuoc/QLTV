@@ -10,10 +10,6 @@ namespace QuanLyThuVIen.Data
 {
     public class DataLoaiSach
     {
-        /// <summary>
-        /// Lấy danh sách loại sách
-        /// </summary>
-        /// <returns></returns>
         public List<LoaiSach> GetListLoaiSach()
         {
 

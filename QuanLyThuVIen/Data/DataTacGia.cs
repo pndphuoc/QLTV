@@ -10,10 +10,6 @@ namespace QuanLyThuVIen.Data
 {
     public class DataTacGia
     {
-        /// <summary>
-        /// Lấy danh sách tác giả
-        /// </summary>
-        /// <returns></returns>
         public List<TacGia> GetListTacGia()
         {
 
@@ -24,11 +20,7 @@ namespace QuanLyThuVIen.Data
                 return lstTacGia;
             }
         }
-        /// <summary>
-        /// Lấy thông tin tác giả từ mã tác giả
-        /// </summary>
-        /// <param name="MaSach"></param>
-        /// <returns></returns>
+
         public List<TacGia> GetListTacGia(int MaSach)
         {
             using (var cnn = DbUtils.GetConnection())
@@ -40,11 +32,6 @@ namespace QuanLyThuVIen.Data
                 return result;
             }
         }
-        /// <summary>
-        /// Cập nhật danh sách tác giả của 1 quyển sách theo mã sách
-        /// </summary>
-        /// <param name="MaSach"></param>
-        /// <param name="lstTG"></param>
         public void UpdateListTacGia(int MaSach, List<TacGia> lstTG)
         {
             using (var cnn = DbUtils.GetConnection())
@@ -66,11 +53,6 @@ namespace QuanLyThuVIen.Data
                 }
             }
         }
-        /// <summary>
-        /// Tìm kiếm
-        /// </summary>
-        /// <param name="searchValue"></param>
-        /// <returns></returns>
         public List<TacGia> Search(string searchValue)
         {
             using (var cnn = DbUtils.GetConnection())

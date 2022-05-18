@@ -59,29 +59,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\DataChiTietMuon.cs" />
-    <Compile Include="Data\DataChiTietTra.cs" />
     <Compile Include="Data\DataChucDanh.cs" />
     <Compile Include="Data\DataDocGia.cs" />
+    <Compile Include="Data\DataKhoa.cs" />
     <Compile Include="Data\DataLoaiSach.cs" />
     <Compile Include="Data\DataNgonNgu.cs" />
     <Compile Include="Data\DataNXB.cs" />
     <Compile Include="Data\DataSach.cs" />
     <Compile Include="Data\DataTacGia.cs" />
-    <Compile Include="Data\DataViPham.cs" />
+    <Compile Include="Data\DataTrangThai.cs" />
     <Compile Include="Data\DbUtils.cs" />
     <Compile Include="Data\DataDocGia_MuonSach.cs" />
+    <Compile Include="Data\LichSuMuonTra.cs" />
     <Compile Include="GUI\BookManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\BookManagerForm.Designer.cs">
       <DependentUpon>BookManagerForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\ChonSachForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\ChonSachForm.Designer.cs">
-      <DependentUpon>ChonSachForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\EditTacGia.cs">
       <SubType>Form</SubType>
@@ -89,11 +83,11 @@
     <Compile Include="GUI\EditTacGia.Designer.cs">
       <DependentUpon>EditTacGia.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FormGiaHan.cs">
+    <Compile Include="GUI\UserDocGia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FormGiaHan.Designer.cs">
-      <DependentUpon>FormGiaHan.cs</DependentUpon>
+    <Compile Include="GUI\UserDocGia.Designer.cs">
+      <DependentUpon>UserDocGia.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormMain.cs">
       <SubType>Form</SubType>
@@ -106,12 +100,6 @@
     </Compile>
     <Compile Include="GUI\FormThemSach.Designer.cs">
       <DependentUpon>FormThemSach.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\FormTraSach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\FormTraSach.Designer.cs">
-      <DependentUpon>FormTraSach.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormXacNhanXoa.cs">
       <SubType>Form</SubType>
@@ -132,40 +120,58 @@
     <Compile Include="GUI\TraSachForm.Designer.cs">
       <DependentUpon>TraSachForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserLichSuMuonTra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UserLichSuMuonTra.Designer.cs">
+      <DependentUpon>UserLichSuMuonTra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UserManagerForm.Designer.cs">
+      <DependentUpon>UserManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserThemDocGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UserThemDocGia.Designer.cs">
+      <DependentUpon>UserThemDocGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserXemThongTin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UserXemThongTin.Designer.cs">
+      <DependentUpon>UserXemThongTin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\ChiTietMuon.cs" />
-    <Compile Include="Model\ChiTietTra.cs" />
     <Compile Include="Model\ChucDanh.cs" />
     <Compile Include="Model\DocGia.cs" />
     <Compile Include="Model\DocGia_MuonSach.cs" />
+    <Compile Include="Model\Khoa.cs" />
+    <Compile Include="Model\LichSuMuon.cs" />
     <Compile Include="Model\NgonNgu.cs" />
     <Compile Include="Model\NhaXuatBan.cs" />
     <Compile Include="Model\Sach.cs" />
-    <Compile Include="Model\SachForSelect.cs" />
     <Compile Include="Model\SachResponse.cs" />
     <Compile Include="Model\TacGia.cs" />
     <Compile Include="Model\LoaiSach.cs" />
-    <Compile Include="Model\ViPham.cs" />
+    <Compile Include="Model\TrangThai.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\BookManagerForm.resx">
       <DependentUpon>BookManagerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ChonSachForm.resx">
-      <DependentUpon>ChonSachForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\EditTacGia.resx">
       <DependentUpon>EditTacGia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FormGiaHan.resx">
-      <DependentUpon>FormGiaHan.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UserDocGia.resx">
+      <DependentUpon>UserDocGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormThemSach.resx">
       <DependentUpon>FormThemSach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FormTraSach.resx">
-      <DependentUpon>FormTraSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormXacNhanXoa.resx">
       <DependentUpon>FormXacNhanXoa.cs</DependentUpon>
@@ -176,6 +182,18 @@
     <EmbeddedResource Include="GUI\TraSachForm.resx">
       <DependentUpon>TraSachForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserLichSuMuonTra.resx">
+      <DependentUpon>UserLichSuMuonTra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserManagerForm.resx">
+      <DependentUpon>UserManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserThemDocGia.resx">
+      <DependentUpon>UserThemDocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserXemThongTin.resx">
+      <DependentUpon>UserXemThongTin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -184,6 +202,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -201,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\Sach\images.jpg" />
+    <None Include="Resources\gai.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
