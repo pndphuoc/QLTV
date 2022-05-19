@@ -25,17 +25,32 @@ namespace QuanLyThuVIen.GUI
             this.MaDocGia = MaDocGia;
             var DataDG = new DataDocGia();
             DocGia DG = DataDG.GetDocGia(this.MaDocGia);
-            textBox1.Text = DG.MaDocGia.ToString();
-            textBox2.Text = DG.TenDocGia;
-            textBox3.Text = DG.NgaySinh.ToString();
-            textBox4.Text = DG.Email;
-            textBox5.Text = DG.DiaChi;
-            textBox6.Text = DG.SoDienThoai;
-            textBox7.Text = DG.NgayDangKy.ToString();
-            textBox8.Text = DG.NgayHetHan.ToString();
-            textBox9.Text = DG.Lop;
-            textBox10.Text = DG.MaKhoa.ToString();
-            textBox11.Text = DG.GioiTinh.ToString();
+            label13.Text = DG.MaDocGia.ToString();
+            label14.Text = DG.TenDocGia;
+            label15.Text = DG.NgaySinh.ToString();
+            label16.Text = DG.Email;
+            label17.Text = DG.DiaChi;
+            label18.Text = DG.SoDienThoai;
+            label19.Text = DG.NgayDangKy.ToString();
+            label20.Text = DG.NgayHetHan.ToString();
+            label21.Text = DG.Lop;
+            var DataKhoa = new DataKhoa();
+            foreach(var K in DataKhoa.GetListKhoa())
+            {
+                if (K.MaKhoa == DG.MaKhoa)
+                {
+                    label22.Text = K.TenKhoa.ToString();
+                }
+            }
+            
+            if (DG.GioiTinh)
+            {
+                label23.Text = "Nữ";
+            }
+            else
+            {
+                label23.Text = "Nam";
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

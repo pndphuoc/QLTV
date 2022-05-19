@@ -38,6 +38,12 @@ namespace QuanLyThuVIen.GUI
             this.cbbNamSinh = new System.Windows.Forms.ComboBox();
             this.tbTimKiem = new System.Windows.Forms.TextBox();
             this.GridDocGia = new System.Windows.Forms.DataGridView();
+            this.bttChiTiet = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.bsDocGia = new System.Windows.Forms.BindingSource(this.components);
             this.colTenDocGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,12 +60,6 @@ namespace QuanLyThuVIen.GUI
             this.colKhoaHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bttChiTiet = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.bsDocGia = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GridDocGia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsDocGia)).BeginInit();
             this.SuspendLayout();
@@ -396,6 +396,123 @@ namespace QuanLyThuVIen.GUI
             this.label2.Size = new System.Drawing.Size(109, 26);
             this.label2.TabIndex = 8;
             this.label2.Text = "Tìm kiếm";
+            // 
+            // colTenDocGia
+            // 
+            this.colTenDocGia.DataPropertyName = "TenDocGia";
+            this.colTenDocGia.HeaderText = "Tên độc giả";
+            this.colTenDocGia.MinimumWidth = 150;
+            this.colTenDocGia.Name = "colTenDocGia";
+            this.colTenDocGia.Width = 270;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "MaTrangThai";
+            this.colTrangThai.HeaderText = "Trạng Thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.Visible = false;
+            // 
+            // colNgaySinh
+            // 
+            this.colNgaySinh.DataPropertyName = "NgaySinh";
+            this.colNgaySinh.HeaderText = "Ngày sinh";
+            this.colNgaySinh.MinimumWidth = 100;
+            this.colNgaySinh.Name = "colNgaySinh";
+            this.colNgaySinh.Width = 190;
+            // 
+            // colSDT
+            // 
+            this.colSDT.DataPropertyName = "SoDienThoai";
+            this.colSDT.HeaderText = "Số điện thoại";
+            this.colSDT.MinimumWidth = 100;
+            this.colSDT.Name = "colSDT";
+            this.colSDT.Width = 150;
+            // 
+            // colGioiTinh
+            // 
+            this.colGioiTinh.DataPropertyName = "GioiTinh";
+            this.colGioiTinh.HeaderText = "Giới tính";
+            this.colGioiTinh.MinimumWidth = 100;
+            this.colGioiTinh.Name = "colGioiTinh";
+            this.colGioiTinh.Visible = false;
+            this.colGioiTinh.Width = 150;
+            // 
+            // colMaDocGia
+            // 
+            this.colMaDocGia.DataPropertyName = "MaDocGia";
+            this.colMaDocGia.HeaderText = "Mã độc giả";
+            this.colMaDocGia.Name = "colMaDocGia";
+            this.colMaDocGia.Visible = false;
+            // 
+            // colMaChucDanh
+            // 
+            this.colMaChucDanh.DataPropertyName = "MaChucDanh";
+            this.colMaChucDanh.HeaderText = "Mã Chức Danh";
+            this.colMaChucDanh.Name = "colMaChucDanh";
+            this.colMaChucDanh.Visible = false;
+            // 
+            // colEmail
+            // 
+            this.colEmail.DataPropertyName = "Email";
+            this.colEmail.HeaderText = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.Visible = false;
+            // 
+            // colDiaChi
+            // 
+            this.colDiaChi.DataPropertyName = "DiaChi";
+            this.colDiaChi.HeaderText = "Địa chỉ";
+            this.colDiaChi.Name = "colDiaChi";
+            this.colDiaChi.Width = 130;
+            // 
+            // colNgayDangKy
+            // 
+            this.colNgayDangKy.DataPropertyName = "NgayDangKy";
+            this.colNgayDangKy.HeaderText = "Ngày đăng ký";
+            this.colNgayDangKy.Name = "colNgayDangKy";
+            this.colNgayDangKy.Visible = false;
+            // 
+            // colNgayHetHan
+            // 
+            this.colNgayHetHan.DataPropertyName = "NgayHetHan";
+            this.colNgayHetHan.HeaderText = "Ngày hết hạn";
+            this.colNgayHetHan.Name = "colNgayHetHan";
+            this.colNgayHetHan.Visible = false;
+            // 
+            // colLop
+            // 
+            this.colLop.DataPropertyName = "Lop";
+            this.colLop.HeaderText = "Lớp";
+            this.colLop.Name = "colLop";
+            this.colLop.Visible = false;
+            // 
+            // colMaKhoa
+            // 
+            this.colMaKhoa.DataPropertyName = "MaKhoa";
+            this.colMaKhoa.HeaderText = "Mã khoa";
+            this.colMaKhoa.Name = "colMaKhoa";
+            this.colMaKhoa.Visible = false;
+            // 
+            // colKhoaHoc
+            // 
+            this.colKhoaHoc.DataPropertyName = "KhoaHoc";
+            this.colKhoaHoc.HeaderText = "Khóa học";
+            this.colKhoaHoc.Name = "colKhoaHoc";
+            this.colKhoaHoc.Visible = false;
+            // 
+            // colUserName
+            // 
+            this.colUserName.DataPropertyName = "Username";
+            this.colUserName.HeaderText = "Username";
+            this.colUserName.Name = "colUserName";
+            this.colUserName.Visible = false;
+            // 
+            // colPassword
+            // 
+            this.colPassword.DataPropertyName = "Password";
+            this.colPassword.HeaderText = "Password";
+            this.colPassword.Name = "colPassword";
+            this.colPassword.Visible = false;
             // 
             // UserDocGia
             // 

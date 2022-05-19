@@ -72,6 +72,19 @@ namespace QuanLyThuVIen.Data
                 return lstSach;
             }
         }
+        public List<DocGia> GetListDocGia4(int GioiTinh)
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                var sql = "select * from DocGia where GioiTinh=@GioiTinh";
+                var param = new
+                {
+                    GioiTinh = GioiTinh
+                };
+                var lstSach = cnn.Query<DocGia>(sql, param).ToList();
+                return lstSach;
+            }
+        }
         public DocGia GetDocGia(int MaDocGia)
         {
             using (var cnn = DbUtils.GetConnection())

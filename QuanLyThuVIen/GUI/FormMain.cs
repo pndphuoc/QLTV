@@ -60,6 +60,9 @@ namespace QuanLyThuVIen
         private void btnAccount_Click(object sender, EventArgs e)
         {
             loadForm(new TaikhoanForm(Manguoi));
+        private void btnCategoryManage_Click(object sender, EventArgs e)
+        {
+            loadForm(new CategoryManagerForm());
         }
 
 

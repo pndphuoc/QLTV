@@ -48,16 +48,15 @@ namespace QuanLyThuVIen.GUI
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.Grid2 = new System.Windows.Forms.DataGridView();
+            this.bs1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bs2 = new System.Windows.Forms.BindingSource(this.components);
             this.colMaDocGia1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTraDungHan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bs1 = new System.Windows.Forms.BindingSource(this.components);
-            this.bs2 = new System.Windows.Forms.BindingSource(this.components);
             label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Grid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grid2)).BeginInit();
@@ -128,7 +127,7 @@ namespace QuanLyThuVIen.GUI
             this.Grid1.Location = new System.Drawing.Point(34, 143);
             this.Grid1.Name = "Grid1";
             this.Grid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid1.Size = new System.Drawing.Size(644, 157);
+            this.Grid1.Size = new System.Drawing.Size(698, 157);
             this.Grid1.TabIndex = 3;
             this.Grid1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid1_CellMouseClick);
             // 
@@ -138,7 +137,6 @@ namespace QuanLyThuVIen.GUI
             this.colMaChiTietMuon.HeaderText = "Mã Chi Tiết Mượn";
             this.colMaChiTietMuon.MinimumWidth = 100;
             this.colMaChiTietMuon.Name = "colMaChiTietMuon";
-            this.colMaChiTietMuon.Visible = false;
             // 
             // colMaDocGia
             // 
@@ -235,16 +233,6 @@ namespace QuanLyThuVIen.GUI
             this.label7.TabIndex = 1;
             this.label7.Text = "Chi tiết mượn";
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.LawnGreen;
-            this.button2.Location = new System.Drawing.Point(659, 544);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Chi tiết mượn";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // Grid2
             // 
             this.Grid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -257,7 +245,7 @@ namespace QuanLyThuVIen.GUI
             this.colTraDungHan});
             this.Grid2.Location = new System.Drawing.Point(34, 327);
             this.Grid2.Name = "Grid2";
-            this.Grid2.Size = new System.Drawing.Size(644, 132);
+            this.Grid2.Size = new System.Drawing.Size(497, 132);
             this.Grid2.TabIndex = 7;
             // 
             // colMaDocGia1
@@ -270,7 +258,7 @@ namespace QuanLyThuVIen.GUI
             // colMaSach
             // 
             this.colMaSach.DataPropertyName = "MaSach";
-            this.colMaSach.HeaderText = "Mã sách";
+            this.colMaSach.HeaderText = "Tên sách";
             this.colMaSach.Name = "colMaSach";
             // 
             // colSoLuong
@@ -285,6 +273,7 @@ namespace QuanLyThuVIen.GUI
             this.colTrangThai1.DataPropertyName = "TrangThai";
             this.colTrangThai1.HeaderText = "Trạng thái";
             this.colTrangThai1.Name = "colTrangThai1";
+            this.colTrangThai1.Visible = false;
             this.colTrangThai1.Width = 150;
             // 
             // colNgayTra
@@ -304,9 +293,8 @@ namespace QuanLyThuVIen.GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 499);
+            this.ClientSize = new System.Drawing.Size(744, 522);
             this.Controls.Add(this.Grid2);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
@@ -339,6 +327,11 @@ namespace QuanLyThuVIen.GUI
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView Grid2;
+        private System.Windows.Forms.BindingSource bs1;
+        private System.Windows.Forms.BindingSource bs2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaChiTietMuon;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDocGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayMuon;
@@ -346,17 +339,11 @@ namespace QuanLyThuVIen.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn colSoLuongMuon;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaNguoiDung;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView Grid2;
-        private System.Windows.Forms.BindingSource bs1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDocGia1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayTra;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTraDungHan;
-        private System.Windows.Forms.BindingSource bs2;
     }
 }

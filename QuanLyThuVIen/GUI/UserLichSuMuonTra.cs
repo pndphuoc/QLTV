@@ -49,22 +49,33 @@ namespace QuanLyThuVIen.GUI
                 {
                     
                     Grid2.Rows.Add();
-                    
-                    Grid2.Rows[n].Cells["colMaSach"].Value =item.MaSach ;
+                    var listSach =new DataSach();
+                    foreach(var s in listSach.GetListSach()) {
+                        if(item.MaSach==s.MaSach)
+                            Grid2.Rows[n].Cells["colMaSach"].Value =s.TenSach ;
+                    }
                     Grid2.Rows[n].Cells["colSoLuong"].Value = item.SoLuong;
-                    Grid2.Rows[n].Cells["colTrangThai1"].Value = item.TrangThai;
-                    if (CT.checkNT(item.MaSach, MaChiTietMuon) !="")
+                    if (item.TrangThai == -1)
                     {
-                        Grid2.Rows[n].Cells["colNgayTra"].Value = CT.checkNT(item.MaSach, MaChiTietMuon).ToString();
-                        if (CT.checkDH(item.MaSach, MaChiTietMuon) == 1)
-                        {
-                            Grid2.Rows[n].Cells["colTraDungHan"].Value = "Có";
-                        }
-                        else
-                            Grid2.Rows[n].Cells["colTraDungHan"].Value = "Không";
+                        Grid2.Rows[n].Cells["colNgayTra"].Value = "Đang chờ";
+                        Grid2.Rows[n].Cells["colTraDungHan"].Value = "Đang chờ";
                     }
                     else
-                        Grid2.Rows[n].Cells["colNgayTra"].Value = "Chưa trả";
+                    {
+                        if (CT.checkNT(item.MaSach, MaChiTietMuon) != "")
+                        {
+                            Grid2.Rows[n].Cells["colNgayTra"].Value = CT.checkNT(item.MaSach, MaChiTietMuon).ToString();
+                            if (CT.checkDH(item.MaSach, MaChiTietMuon) == 1)
+                            {
+                                Grid2.Rows[n].Cells["colTraDungHan"].Value = "Đúng hạn";
+                            }
+                            else
+                                Grid2.Rows[n].Cells["colTraDungHan"].Value = "Trễ hạn";
+                        }
+                        else
+                            Grid2.Rows[n].Cells["colNgayTra"].Value = "Chưa trả";
+                    }
+                    
                     
                     n = n + 1;
                 }

@@ -114,6 +114,7 @@
             this.btnCategoryManage.TabIndex = 20;
             this.btnCategoryManage.Text = "Quản lý danh mục";
             this.btnCategoryManage.UseVisualStyleBackColor = true;
+            this.btnCategoryManage.Click += new System.EventHandler(this.btnCategoryManage_Click);
             // 
             // btnUserManage
             // 
