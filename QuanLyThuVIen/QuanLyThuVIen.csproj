@@ -77,11 +77,29 @@
     <Compile Include="GUI\BookManagerForm.Designer.cs">
       <DependentUpon>BookManagerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\CategoryManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CategoryManagerForm.Designer.cs">
+      <DependentUpon>CategoryManagerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\EditTacGia.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\EditTacGia.Designer.cs">
       <DependentUpon>EditTacGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NhaXuatBanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NhaXuatBanForm.Designer.cs">
+      <DependentUpon>NhaXuatBanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThemNXB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThemNXB.Designer.cs">
+      <DependentUpon>ThemNXB.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserDocGia.cs">
       <SubType>Form</SubType>
@@ -161,8 +179,17 @@
     <EmbeddedResource Include="GUI\BookManagerForm.resx">
       <DependentUpon>BookManagerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CategoryManagerForm.resx">
+      <DependentUpon>CategoryManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\EditTacGia.resx">
       <DependentUpon>EditTacGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhaXuatBanForm.resx">
+      <DependentUpon>NhaXuatBanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThemNXB.resx">
+      <DependentUpon>ThemNXB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserDocGia.resx">
       <DependentUpon>UserDocGia.cs</DependentUpon>

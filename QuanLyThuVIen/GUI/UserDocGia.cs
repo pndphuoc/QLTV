@@ -183,7 +183,10 @@ namespace QuanLyThuVIen.GUI
 
         private void cbbGioiTinh_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            int GioiTinh = this.cbbGioiTinh.GetItemText(this.cbbGioiTinh.SelectedItem) == "Nữ" ? 1 : 0;
+            var DG = new DataDocGia();
+            bsDocGia.DataSource = DG.GetListDocGia4(GioiTinh);
+            GridDocGia.DataSource = bsDocGia;
         }
 
         private void button3_Click(object sender, EventArgs e)

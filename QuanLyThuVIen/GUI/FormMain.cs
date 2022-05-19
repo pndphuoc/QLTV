@@ -52,6 +52,11 @@ namespace QuanLyThuVIen
             
         }
 
+        private void btnCategoryManage_Click(object sender, EventArgs e)
+        {
+            loadForm(new CategoryManagerForm());
+        }
+
 
 
         //private void gridSach_CellClick(object sender, DataGridViewCellEventArgs e)

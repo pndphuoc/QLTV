@@ -10,7 +10,7 @@ namespace QuanLyThuVIen.Model
     {
         public int MaChiTietMuon { get; set; }
         public int MaSach { get; set; }
-        public bool TrangThai { get; set; }
+        public int TrangThai { get; set; }
         public int SoLuong { get; set; }
     }
 }
