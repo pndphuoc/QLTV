@@ -18,7 +18,9 @@ namespace QuanLyThuVIen.Forms
         public LoginForm()
         {
             InitializeComponent();
-            
+            button_login.TabStop = false;
+            button_login.FlatStyle = FlatStyle.Flat;
+            button_login.FlatAppearance.BorderSize = 0;
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -38,6 +40,8 @@ namespace QuanLyThuVIen.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
             DataNguoiDung data = new DataNguoiDung();
             string Email = this.txtUserName.Text;
             string password = this.txtPassword.Text;

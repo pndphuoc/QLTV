@@ -11,11 +11,11 @@ namespace QuanLyThuVIen.Data
 {
     public class DataNguoiDung
     {
-        public List<NguoiDung> GetListNguoiDung()
+        public List<NguoiDung> GetListManager()
         {
             using (var cnn = DbUtils.GetConnection())
             {
-                var sql = "SELECT * from NguoiDung";
+                var sql = "SELECT * from NguoiDung where MaChucVu = 2";
                 var lstnguoidung = cnn.Query<NguoiDung>(sql).ToList();
                 return lstnguoidung;
             }
@@ -27,7 +27,7 @@ namespace QuanLyThuVIen.Data
                 using (var cnn = DbUtils.GetConnection())
                 {
                     string tam = "%" + search_value + "%";
-                    var sql = @"select * from NguoiDung where (SoDienThoai like @searchvalue) or (HoTen like @searchvalue) ";
+                    var sql = @"select * from NguoiDung where ((SoDienThoai like @searchvalue) or (HoTen like @searchvalue)) and MaChucVu = 2 ";
                     var param = new
                     {
                         searchvalue = tam.Trim()
@@ -50,7 +50,7 @@ namespace QuanLyThuVIen.Data
         {
             using (var cnn = DbUtils.GetConnection())
             {
-                var sql = "SELECT * from NguoiDung where Email=@Email and Password=@password";
+                var sql = "SELECT * from NguoiDung where (Email=@Email and Password=@password) or (UserName = @Email and Password = @password)";
                 var param = new
                 {
                     Email = email,

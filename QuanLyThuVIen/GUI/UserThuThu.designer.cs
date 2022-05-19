@@ -34,11 +34,6 @@ namespace QuanLyThuVIen.GUI
             this.label1 = new System.Windows.Forms.Label();
             this.TimKiem = new System.Windows.Forms.TextBox();
             this.GridThuThu = new System.Windows.Forms.DataGridView();
-            this.bsThuThu = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.MaNguoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +44,11 @@ namespace QuanLyThuVIen.GUI
             this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsThuThu = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridThuThu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsThuThu)).BeginInit();
             this.SuspendLayout();
@@ -58,9 +58,10 @@ namespace QuanLyThuVIen.GUI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(17, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 20);
+            this.label1.Size = new System.Drawing.Size(239, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "DANH SÁCH THỦ THƯ\r\n";
             // 
@@ -69,16 +70,20 @@ namespace QuanLyThuVIen.GUI
             this.TimKiem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.TimKiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TimKiem.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TimKiem.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.TimKiem.Location = new System.Drawing.Point(132, 52);
+            this.TimKiem.Location = new System.Drawing.Point(127, 56);
+            this.TimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TimKiem.Name = "TimKiem";
-            this.TimKiem.Size = new System.Drawing.Size(443, 20);
+            this.TimKiem.Size = new System.Drawing.Size(590, 32);
             this.TimKiem.TabIndex = 2;
-            this.TimKiem.Text = "Hoten, Sodienthoai, Email";
             this.TimKiem.TextChanged += new System.EventHandler(this.tbTimKiem_TextChanged);
             // 
             // GridThuThu
             // 
+            this.GridThuThu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GridThuThu.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.GridThuThu.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -102,12 +107,98 @@ namespace QuanLyThuVIen.GUI
             this.Password,
             this.TrangThai});
             this.GridThuThu.GridColor = System.Drawing.SystemColors.Control;
-            this.GridThuThu.Location = new System.Drawing.Point(17, 78);
+            this.GridThuThu.Location = new System.Drawing.Point(23, 96);
+            this.GridThuThu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GridThuThu.Name = "GridThuThu";
-            this.GridThuThu.Size = new System.Drawing.Size(944, 280);
+            this.GridThuThu.RowHeadersWidth = 51;
+            this.GridThuThu.Size = new System.Drawing.Size(1309, 450);
             this.GridThuThu.TabIndex = 4;
             this.GridThuThu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridThuThu_CellContentClick);
             this.GridThuThu.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridThuThu_CellMouseClick);
+            // 
+            // MaNguoiDung
+            // 
+            this.MaNguoiDung.DataPropertyName = "MaNguoiDung";
+            this.MaNguoiDung.HeaderText = "Mã thủ thư";
+            this.MaNguoiDung.MinimumWidth = 6;
+            this.MaNguoiDung.Name = "MaNguoiDung";
+            this.MaNguoiDung.Visible = false;
+            this.MaNguoiDung.Width = 125;
+            // 
+            // HoTen
+            // 
+            this.HoTen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "Tên thủ thư";
+            this.HoTen.MinimumWidth = 6;
+            this.HoTen.Name = "HoTen";
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày sinh";
+            this.NgaySinh.MinimumWidth = 6;
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.Width = 125;
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.HeaderText = "Giới tính";
+            this.GioiTinh.MinimumWidth = 6;
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.Width = 125;
+            // 
+            // SoDienThoai
+            // 
+            this.SoDienThoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SoDienThoai.DataPropertyName = "SoDienThoai";
+            this.SoDienThoai.HeaderText = "Số điện thoại";
+            this.SoDienThoai.MinimumWidth = 6;
+            this.SoDienThoai.Name = "SoDienThoai";
+            // 
+            // Email
+            // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            // 
+            // MaChucVu
+            // 
+            this.MaChucVu.DataPropertyName = "MaChucVu";
+            this.MaChucVu.HeaderText = "Mã chức vụ";
+            this.MaChucVu.MinimumWidth = 6;
+            this.MaChucVu.Name = "MaChucVu";
+            this.MaChucVu.Width = 125;
+            // 
+            // UserName
+            // 
+            this.UserName.DataPropertyName = "UserName";
+            this.UserName.HeaderText = "Username";
+            this.UserName.MinimumWidth = 6;
+            this.UserName.Name = "UserName";
+            this.UserName.Visible = false;
+            this.UserName.Width = 125;
+            // 
+            // Password
+            // 
+            this.Password.DataPropertyName = "Password";
+            this.Password.HeaderText = "Password";
+            this.Password.MinimumWidth = 6;
+            this.Password.Name = "Password";
+            this.Password.Visible = false;
+            this.Password.Width = 125;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.MinimumWidth = 6;
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.Visible = false;
+            this.TrangThai.Width = 125;
             // 
             // bsThuThu
             // 
@@ -115,9 +206,12 @@ namespace QuanLyThuVIen.GUI
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(190, 364);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(252, 554);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 23);
+            this.button1.Size = new System.Drawing.Size(200, 42);
             this.button1.TabIndex = 7;
             this.button1.Text = "Sửa";
             this.button1.UseVisualStyleBackColor = true;
@@ -125,9 +219,12 @@ namespace QuanLyThuVIen.GUI
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(364, 364);
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(484, 554);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 23);
+            this.button3.Size = new System.Drawing.Size(200, 42);
             this.button3.TabIndex = 8;
             this.button3.Text = "Xoá";
             this.button3.UseVisualStyleBackColor = true;
@@ -135,9 +232,12 @@ namespace QuanLyThuVIen.GUI
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(17, 364);
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(22, 554);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(150, 23);
+            this.btnAdd.Size = new System.Drawing.Size(200, 42);
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -146,85 +246,19 @@ namespace QuanLyThuVIen.GUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(41, 55);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(18, 58);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.Size = new System.Drawing.Size(101, 26);
             this.label2.TabIndex = 9;
             this.label2.Text = "Tìm kiếm";
             // 
-            // MaNguoiDung
-            // 
-            this.MaNguoiDung.DataPropertyName = "MaNguoiDung";
-            this.MaNguoiDung.HeaderText = "Mã thủ thư";
-            this.MaNguoiDung.Name = "MaNguoiDung";
-            this.MaNguoiDung.Visible = false;
-            // 
-            // HoTen
-            // 
-            this.HoTen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.HoTen.DataPropertyName = "HoTen";
-            this.HoTen.HeaderText = "Tên thủ thư";
-            this.HoTen.Name = "HoTen";
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            this.NgaySinh.HeaderText = "Ngày sinh";
-            this.NgaySinh.Name = "NgaySinh";
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.DataPropertyName = "GioiTinh";
-            this.GioiTinh.HeaderText = "Giới tính";
-            this.GioiTinh.Name = "GioiTinh";
-            // 
-            // SoDienThoai
-            // 
-            this.SoDienThoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SoDienThoai.DataPropertyName = "SoDienThoai";
-            this.SoDienThoai.HeaderText = "Số điện thoại";
-            this.SoDienThoai.Name = "SoDienThoai";
-            // 
-            // Email
-            // 
-            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            // 
-            // MaChucVu
-            // 
-            this.MaChucVu.DataPropertyName = "MaChucVu";
-            this.MaChucVu.HeaderText = "Mã chức vụ";
-            this.MaChucVu.Name = "MaChucVu";
-            // 
-            // UserName
-            // 
-            this.UserName.DataPropertyName = "UserName";
-            this.UserName.HeaderText = "Username";
-            this.UserName.Name = "UserName";
-            this.UserName.Visible = false;
-            // 
-            // Password
-            // 
-            this.Password.DataPropertyName = "Password";
-            this.Password.HeaderText = "Password";
-            this.Password.Name = "Password";
-            this.Password.Visible = false;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.DataPropertyName = "TrangThai";
-            this.TrangThai.HeaderText = "Trạng thái";
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.Visible = false;
-            // 
             // UserThuThu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 471);
+            this.ClientSize = new System.Drawing.Size(1357, 648);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnAdd);
@@ -232,6 +266,7 @@ namespace QuanLyThuVIen.GUI
             this.Controls.Add(this.GridThuThu);
             this.Controls.Add(this.TimKiem);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UserThuThu";
             this.Text = "Thủ thư";
             ((System.ComponentModel.ISupportInitialize)(this.GridThuThu)).EndInit();

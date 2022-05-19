@@ -55,8 +55,9 @@
             // 
             // btnStatisticsReport
             // 
-            this.btnStatisticsReport.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStatisticsReport.Location = new System.Drawing.Point(1138, 2);
+            this.btnStatisticsReport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnStatisticsReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatisticsReport.Location = new System.Drawing.Point(911, 2);
             this.btnStatisticsReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStatisticsReport.Name = "btnStatisticsReport";
             this.btnStatisticsReport.Size = new System.Drawing.Size(221, 72);
@@ -66,7 +67,8 @@
             // 
             // btnAccount
             // 
-            this.btnAccount.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAccount.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccount.Location = new System.Drawing.Point(1365, 2);
             this.btnAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAccount.Name = "btnAccount";
@@ -78,7 +80,8 @@
             // 
             // btnBookManager
             // 
-            this.btnBookManager.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBookManager.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBookManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBookManager.Location = new System.Drawing.Point(230, 2);
             this.btnBookManager.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBookManager.Name = "btnBookManager";
@@ -90,7 +93,8 @@
             // 
             // btnHome
             // 
-            this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.Location = new System.Drawing.Point(3, 2);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHome.Name = "btnHome";
@@ -101,8 +105,9 @@
             // 
             // btnCategoryManage
             // 
-            this.btnCategoryManage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCategoryManage.Location = new System.Drawing.Point(457, 2);
+            this.btnCategoryManage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCategoryManage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategoryManage.Location = new System.Drawing.Point(1138, 2);
             this.btnCategoryManage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCategoryManage.Name = "btnCategoryManage";
             this.btnCategoryManage.Size = new System.Drawing.Size(221, 72);
@@ -112,7 +117,8 @@
             // 
             // btnUserManage
             // 
-            this.btnUserManage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUserManage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUserManage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserManage.Location = new System.Drawing.Point(684, 2);
             this.btnUserManage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUserManage.Name = "btnUserManage";
@@ -124,13 +130,14 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.flowLayoutPanel1.Controls.Add(this.btnHome);
             this.flowLayoutPanel1.Controls.Add(this.btnBookManager);
-            this.flowLayoutPanel1.Controls.Add(this.btnCategoryManage);
-            this.flowLayoutPanel1.Controls.Add(this.btnUserManage);
             this.flowLayoutPanel1.Controls.Add(this.btnMuonTra);
+            this.flowLayoutPanel1.Controls.Add(this.btnUserManage);
             this.flowLayoutPanel1.Controls.Add(this.btnStatisticsReport);
+            this.flowLayoutPanel1.Controls.Add(this.btnCategoryManage);
             this.flowLayoutPanel1.Controls.Add(this.btnAccount);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -141,8 +148,9 @@
             // 
             // btnMuonTra
             // 
-            this.btnMuonTra.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMuonTra.Location = new System.Drawing.Point(911, 2);
+            this.btnMuonTra.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnMuonTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMuonTra.Location = new System.Drawing.Point(457, 2);
             this.btnMuonTra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMuonTra.Name = "btnMuonTra";
             this.btnMuonTra.Size = new System.Drawing.Size(221, 72);
@@ -180,7 +188,9 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnBorrowGiveBack);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

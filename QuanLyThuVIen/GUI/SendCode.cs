@@ -20,6 +20,12 @@ namespace QuanLyThuVIen.Forms
         public SendCode()
         {
             InitializeComponent();
+            button1.TabStop = false;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.FlatAppearance.BorderSize = 0;
+            button2.TabStop = false;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.FlatAppearance.BorderSize = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,7 +33,7 @@ namespace QuanLyThuVIen.Forms
             DataNguoiDung data = new DataNguoiDung();
             if (string.IsNullOrWhiteSpace(txtEmail.Text))
             {
-                MessageBox.Show("bạn chưa nhập email");
+                MessageBox.Show("Bạn chưa nhập email");
 
             }
             else
@@ -47,11 +53,11 @@ namespace QuanLyThuVIen.Forms
                         to = (txtEmail.Text).ToString();
                         from = "ktpm.husc.qltv@gmail.com";
                         pass = "phuocdeptrai";
-                        messagebody = "mã xác nhận của bạn là: " + randomCode;
+                        messagebody = "Mã xác nhận của bạn là: " + randomCode;
                         message.To.Add(to);
                         message.From = new MailAddress(from);
                         message.Body = messagebody;
-                        message.Subject = "mã xác thực là";
+                        message.Subject = "Reset mật khẩu tài khoản quản lý thư viện";
                         using (SmtpClient smtp = new SmtpClient("smtp.gmail.com"))
                         {
                             smtp.EnableSsl = true;
@@ -61,7 +67,7 @@ namespace QuanLyThuVIen.Forms
                             try
                             {
                                 smtp.Send(message);
-                                MessageBox.Show("mã xác nhận thành công");
+                                MessageBox.Show("Gửi mã xác nhận thành công");
                             }
                             catch (Exception ex)
                             {
@@ -72,7 +78,7 @@ namespace QuanLyThuVIen.Forms
                 }
                 catch
                 {
-                    MessageBox.Show("Bạn Không Có Tài Khoản");
+                    MessageBox.Show("Bạn không có tài khoản");
 
                 }
 

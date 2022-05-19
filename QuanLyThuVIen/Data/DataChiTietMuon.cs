@@ -21,7 +21,7 @@ namespace QuanLyThuVIen.Data
             {
                 //var sql = @"SELECT s.MaSach, s.TenSach,nxb.MaNhaXuatBan, nxb.TenNhaXuatBan, s.DonGia, s.MaNgonNgu, s.NamXuatBan, s.SoLuong, s.SoTaiBan,s.TinhTrang 
                 //            from Sach as s inner join NhaXuatBan as nxb on nxb.MaNhaXuatBan = s.MaNhaXuatBan";
-                var sql = "select * from ChiTietMuon where";
+                var sql = "select * from ChiTietMuon";
                 var lstChiTietMuon = cnn.Query<ChiTietMuon>(sql).ToList();
                 return lstChiTietMuon;
             }

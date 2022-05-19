@@ -77,7 +77,7 @@ namespace QuanLyThuVIen.GUI
         private void cbbGioiTinh_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataNguoiDung dtNguoiDung = new DataNguoiDung();
-            var lstThuThu = dtNguoiDung.GetListNguoiDung();
+            var lstThuThu = dtNguoiDung.GetListManager();
 
            
         }

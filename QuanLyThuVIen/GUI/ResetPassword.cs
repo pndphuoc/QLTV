@@ -20,6 +20,9 @@ namespace QuanLyThuVIen.Forms
         public ResetPassword()
         {
             InitializeComponent();
+            button1.TabStop = false;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.FlatAppearance.BorderSize = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
