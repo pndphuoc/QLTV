@@ -262,5 +262,24 @@ namespace QuanLyThuVIen.GUI
             FormGiaHan f = new FormGiaHan(Convert.ToInt32(txtMaPhieuMuon.Text), MaDocGiaGlobal, lbDangMuon);
             f.ShowDialog();
         }
+
+        private void btnHuy_MUON_Click(object sender, EventArgs e)
+        {
+            txtMaDocGia_MUON.Text = "";
+            dtNgayMuon.Value = DateTime.Now.Date;
+            dtNgayTra.Value = DateTime.Now.Date;
+            txtNhanVien_MUON = null;
+            lbChonSach.DataSource = null;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormDanhSachDangCho form = new FormDanhSachDangCho();
+            form.ShowDialog();
+            if(form.DialogResult == DialogResult.OK)
+            {
+                Reload();
+            }
+        }
     }
 }

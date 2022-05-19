@@ -40,7 +40,6 @@ namespace QuanLyThuVIen.GUI
 
             if (lsMaSach != null)
             {
-
                 foreach (DataGridViewRow row in gridChonSach.Rows)
                 {
                     int MaSach = (int)row.Cells["MaSach"].Value;
@@ -50,17 +49,6 @@ namespace QuanLyThuVIen.GUI
 
                         cell.Value = 1; // or cell.Value = 0;
                     }
-                    //foreach (var item in lsMaSach)
-                    //{
-                    //    int MaSach = Convert.ToInt32(row.Cells[0].Value);
-                    //    if (MaSach == item)
-                    //    {
-                    //        DataGridViewCheckBoxCell cell = (DataGridViewCheckBoxCell)gridChonSach.Rows[gridChonSach.Rows.IndexOf(row)].Cells["Selected"];
-
-                    //        cell.Value = cell.FalseValue; // or cell.Value = 0;
-                    //    }
-                    //        //row.Cells["Selected"].Value = true;
-                    //}
                 }
             }
 

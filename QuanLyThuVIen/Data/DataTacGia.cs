@@ -10,6 +10,16 @@ namespace QuanLyThuVIen.Data
 {
     public class DataTacGia
     {
+        public TacGia GetTacGia(int MaTacGia)
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                var sql = "select * from TacGia where MaTacGia = @MaTacGia";
+                var param = new { MaTacGia = MaTacGia };
+                var TacGia = cnn.Query<TacGia>(sql, param).ToList();
+                return TacGia[0];
+            }
+        }
         public List<TacGia> GetListTacGia()
         {
 

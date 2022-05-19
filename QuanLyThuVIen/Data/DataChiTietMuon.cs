@@ -57,7 +57,7 @@ namespace QuanLyThuVIen.Data
                 {
                     MaDocGia = MaDocGia
                 };
-                List<int> count = cnn.Query<int>(sql,param).ToList();
+                List<int> count = cnn.Query<int>(sql, param).ToList();
                 return count[0];
             }
         }
@@ -70,7 +70,7 @@ namespace QuanLyThuVIen.Data
         public int InsertChiTietMuon(ChiTietMuon ctm)
         {
             using (var cnn = DbUtils.GetConnection())
-            {             
+            {
                 var sql = @"insert into ChiTietMuon(MaDocGia, NgayMuon, SoLuongMuon, HanTra, TrangThai)
                             values(@MaDocGia, @NgayMuon, @SoLuongMuon, @HanTra, @TrangThai)
                             select @@identity";
@@ -136,5 +136,36 @@ namespace QuanLyThuVIen.Data
                 }
             }
         }
+        public void UpdateHanTra(int ChiTietMuon, DateTime HanTraMoi)
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                var sql = @"update ChiTietMuon set HanTra = @HanTra where MaChiTietMuon = @MaChiTietMuon";
+                var param = new
+                {
+                    HanTra = HanTraMoi,
+                    MaChiTietMuon = ChiTietMuon
+                };
+                cnn.Execute(sql, param);
+            }
+        }
+        public void UpdateDangMuon_ChiTietMuon(int MaChiTietMuon, List<SachChoMuon> lstSach)
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                foreach (var item in lstSach)
+                {
+                    var sql = @"Update Sach_ChiTietMuon set TrangThai = 0 where MaChiTietMuon = @MaCTM and MaSach = @MaSach
+                                update ChiTietMuon set TrangThai = 0 where MaChiTietMuon = @MaCTM";
+                    var param = new
+                    {
+                        MaSach = item.MaSach,
+                        MaCTM = MaChiTietMuon
+                    };
+                    cnn.Execute(sql, param);
+                }
+            }
+        }
     }
 }
+

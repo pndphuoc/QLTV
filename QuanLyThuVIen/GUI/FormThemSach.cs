@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace QuanLyThuVIen.GUI
 {
     public partial class FormThemSach : Form
     {
+        private List<int> listMaTacGia = new List<int>();
         public FormThemSach()
         {
             InitializeComponent();
@@ -53,68 +55,15 @@ namespace QuanLyThuVIen.GUI
 
         private void btnThemAnh_Click(object sender, EventArgs e)
         {
-            //TODO: up ảnh cho sách
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.CheckFileExists = true;
-            openFileDialog.AddExtension = true;
-            openFileDialog.Multiselect = false;
-            openFileDialog.Filter = "Image files (*.png; *.jpg)|*.png; *.jpg";
-
-            //if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            //{
-            //    foreach (string fileName in openFileDialog.FileNames)
-            //    {
-            //        Process.Start(fileName);
-            //    }
-            //}
-            try
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *png)|*.jpg; *.png;";
+            if (open.ShowDialog() == DialogResult.OK)
             {
-                if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    if (openFileDialog.CheckFileExists)
-                    {
-                        string path = System.IO.Path.GetFullPath(openFileDialog.FileName);
-                        labelPhotoPath.Text = path;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Please Upload document.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                txtFile.Text = open.FileName;
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox1.Image = new Bitmap(open.FileName);
 
-            try
-            {
-                string filename = System.IO.Path.GetFileName(openFileDialog.FileName);
-                if (filename == null)
-                {
-                    MessageBox.Show("Please select a valid document.");
-                }
-                else
-                {
-                    //we already define our connection globaly. We are just calling the object of connection.
-                    using (var cnn = DbUtils.GetConnection())
-                    {
-                        //var sql = "insert into Sach (Anh) values(" + filename + ")";
-                        SqlCommand cmd = new SqlCommand("insert into Sach (Anh) values(" + filename + ")");
-                        string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
-                        System.IO.File.Copy(openFileDialog.FileName, path + filename);
-                        cmd.ExecuteNonQuery();
-                        cnn.Close();
-                        MessageBox.Show("Đã tải ảnh lên.");
-                    }
-                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -124,8 +73,10 @@ namespace QuanLyThuVIen.GUI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            var TenSach = txtBookName.Text.Trim();
+
+
             Sach s = new Sach();
+            var TenSach = txtBookName.Text.Trim();
 
 
             s.TenSach = TenSach;
@@ -137,16 +88,21 @@ namespace QuanLyThuVIen.GUI
             s.DonGia = Convert.ToInt32(txtGiaBia.Text.Trim());
             s.MaNgonNgu = ((NgonNgu)cbNgonNgu.SelectedItem).MaNgonNgu;
             s.MaNhaXuatBan = ((NhaXuatBan)cbNXB.SelectedItem).MaNhaXuatBan;
-
-            var dataSach = new DataSach();
-            bool result = dataSach.Insert(s);
-            if (result == false)
+            if (txtFile.Text.Length > 0)
             {
-                MessageBox.Show("Thêm sách thất bại.");
+                File.Copy(txtFile.Text, Path.Combine(@"C:\Users\phamn\source\repos\QuanLyThuVIen\QuanLyThuVIen\images\Sach", Path.GetFileName(txtFile.Text)), true);
+                s.Anh = @"C:\Users\phamn\source\repos\QuanLyThuVIen\QuanLyThuVIen\images\Sach\" + Path.GetFileName(txtFile.Text);
+            }
+            var dataSach = new DataSach();
+            int MaSach = dataSach.Insert(s);
+            dataSach.InsertTacGia(MaSach, listMaTacGia);
+            if (MaSach != 0)
+            {
+                MessageBox.Show("Thêm sách thành công");
             }
             else
             {
-                MessageBox.Show("Thêm sách thành công");
+                MessageBox.Show("Thêm sách thất bại.");
             }
 
             this.DialogResult = DialogResult.OK;
@@ -157,10 +113,57 @@ namespace QuanLyThuVIen.GUI
         {
 
         }
+        void LoadData(List<int> lstTacGia)
+        {
+            DataTacGia dtTG = new DataTacGia();
+            List<TacGia> listTacGia = new List<TacGia>();
+            foreach (int i in lstTacGia)
+            {
+                listTacGia.Add(dtTG.GetTacGia(i));
+            }
+            lbTacGia.DataSource = listTacGia;
+            lbTacGia.DisplayMember = "TenTacGia";
 
+            ///Gán danh sách mã sách được nhập từ form Thêm sách vào biến toàn cục listSach
+            listMaTacGia = lstTacGia;
+        }
         private void EditAuthorButton_Click(object sender, EventArgs e)
         {
+            var lstTG = new List<int>();
+            foreach(var item in lbTacGia.Items)
+            {
+                lstTG.Add(((TacGia)item).MaTacGia);
+            }
+            if (lstTG.Count == 0)
+            {
+                FormChonTacGia f = new FormChonTacGia();
+                f.truyenData = new FormChonTacGia.TruyenChoMuonTraForm(LoadData);
+                f.ShowDialog();              
+            }
+            else
+            {
+                List<int> curList = listMaTacGia;
+                FormChonTacGia f = new FormChonTacGia(listMaTacGia);
+                f.truyenData = new FormChonTacGia.TruyenChoMuonTraForm(LoadData);
+                f.ShowDialog();
+                if (f.DialogResult == DialogResult.Cancel)
+                {
+                    DataTacGia dtTG = new DataTacGia();
+                    List<TacGia> listTacGia = new List<TacGia>();
+                    listMaTacGia = curList;
+                    foreach (int i in curList)
+                    {
+                        listTacGia.Add(dtTG.GetTacGia(i));
+                    }
+                    lbTacGia.DataSource = listTacGia;
+                    lbTacGia.DisplayMember = "TenTacGia";
+                }
+            }          
+        }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

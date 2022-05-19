@@ -105,6 +105,18 @@
     <Compile Include="GUI\EditThuThu.designer.cs">
       <DependentUpon>EditThuThu.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormChonTacGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormChonTacGia.Designer.cs">
+      <DependentUpon>FormChonTacGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormDanhSachDangCho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormDanhSachDangCho.Designer.cs">
+      <DependentUpon>FormDanhSachDangCho.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormGiaHan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +250,7 @@
     <Compile Include="Model\NguoiDung.cs" />
     <Compile Include="Model\NhaXuatBan.cs" />
     <Compile Include="Model\Sach.cs" />
+    <Compile Include="Model\SachChoMuon.cs" />
     <Compile Include="Model\SachForSelect.cs" />
     <Compile Include="Model\SachResponse.cs" />
     <Compile Include="Model\TacGia.cs" />
@@ -259,6 +272,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EditThuThu.resx">
       <DependentUpon>EditThuThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormChonTacGia.resx">
+      <DependentUpon>FormChonTacGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormDanhSachDangCho.resx">
+      <DependentUpon>FormDanhSachDangCho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormGiaHan.resx">
       <DependentUpon>FormGiaHan.cs</DependentUpon>

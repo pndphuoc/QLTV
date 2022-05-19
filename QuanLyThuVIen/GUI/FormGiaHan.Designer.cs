@@ -37,12 +37,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtMaChiTietMuon = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtTenDocGia = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.lbNgayMuon = new System.Windows.Forms.Label();
+            this.lbHanTra = new System.Windows.Forms.Label();
+            this.dateHanTraMoi = new System.Windows.Forms.DateTimePicker();
+            this.txtPhiDichVu = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
@@ -137,58 +137,59 @@
             this.txtMaChiTietMuon.Size = new System.Drawing.Size(279, 30);
             this.txtMaChiTietMuon.TabIndex = 10;
             // 
-            // textBox2
+            // txtTenDocGia
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(166, 122);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(305, 30);
-            this.textBox2.TabIndex = 11;
+            this.txtTenDocGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenDocGia.Location = new System.Drawing.Point(166, 122);
+            this.txtTenDocGia.Name = "txtTenDocGia";
+            this.txtTenDocGia.ReadOnly = true;
+            this.txtTenDocGia.Size = new System.Drawing.Size(305, 30);
+            this.txtTenDocGia.TabIndex = 11;
             // 
-            // textBox3
+            // txtSDT
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(165, 176);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(145, 30);
-            this.textBox3.TabIndex = 12;
+            this.txtSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDT.Location = new System.Drawing.Point(165, 176);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.ReadOnly = true;
+            this.txtSDT.Size = new System.Drawing.Size(145, 30);
+            this.txtSDT.TabIndex = 12;
             // 
-            // label10
+            // lbNgayMuon
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(164, 229);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 25);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "1/1/2000";
+            this.lbNgayMuon.AutoSize = true;
+            this.lbNgayMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNgayMuon.Location = new System.Drawing.Point(164, 229);
+            this.lbNgayMuon.Name = "lbNgayMuon";
+            this.lbNgayMuon.Size = new System.Drawing.Size(90, 25);
+            this.lbNgayMuon.TabIndex = 13;
+            this.lbNgayMuon.Text = "1/1/2000";
             // 
-            // label11
+            // lbHanTra
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(112, 279);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(90, 25);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "1/1/2000";
+            this.lbHanTra.AutoSize = true;
+            this.lbHanTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHanTra.Location = new System.Drawing.Point(112, 279);
+            this.lbHanTra.Name = "lbHanTra";
+            this.lbHanTra.Size = new System.Drawing.Size(90, 25);
+            this.lbHanTra.TabIndex = 14;
+            this.lbHanTra.Text = "1/1/2000";
             // 
-            // dateTimePicker1
+            // dateHanTraMoi
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(217, 332);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 15;
+            this.dateHanTraMoi.Location = new System.Drawing.Point(217, 332);
+            this.dateHanTraMoi.Name = "dateHanTraMoi";
+            this.dateHanTraMoi.Size = new System.Drawing.Size(269, 22);
+            this.dateHanTraMoi.TabIndex = 15;
+            this.dateHanTraMoi.ValueChanged += new System.EventHandler(this.dateHanTraMoi_ValueChanged);
             // 
-            // textBox4
+            // txtPhiDichVu
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(217, 378);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(200, 30);
-            this.textBox4.TabIndex = 16;
+            this.txtPhiDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhiDichVu.Location = new System.Drawing.Point(217, 378);
+            this.txtPhiDichVu.Name = "txtPhiDichVu";
+            this.txtPhiDichVu.Size = new System.Drawing.Size(200, 30);
+            this.txtPhiDichVu.TabIndex = 16;
             // 
             // label12
             // 
@@ -210,6 +211,7 @@
             this.btnXacNhan.TabIndex = 18;
             this.btnXacNhan.Text = "Xác nhận";
             this.btnXacNhan.UseVisualStyleBackColor = true;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // btnHuy
             // 
@@ -231,12 +233,12 @@
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnXacNhan);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPhiDichVu);
+            this.Controls.Add(this.dateHanTraMoi);
+            this.Controls.Add(this.lbHanTra);
+            this.Controls.Add(this.lbNgayMuon);
+            this.Controls.Add(this.txtSDT);
+            this.Controls.Add(this.txtTenDocGia);
             this.Controls.Add(this.txtMaChiTietMuon);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -264,12 +266,12 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtMaChiTietMuon;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtTenDocGia;
+        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.Label lbNgayMuon;
+        private System.Windows.Forms.Label lbHanTra;
+        private System.Windows.Forms.DateTimePicker dateHanTraMoi;
+        private System.Windows.Forms.TextBox txtPhiDichVu;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnXacNhan;
         private System.Windows.Forms.Button btnHuy;

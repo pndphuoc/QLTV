@@ -73,13 +73,30 @@ namespace QuanLyThuVIen.Data
                 return result[0];
             }
         }
-
-        public bool Insert(Sach s)
+        public void InsertTacGia(int MaSach, List<int> lstTacGia)
         {
             using (var cnn = DbUtils.GetConnection())
             {
-                var sql = @"INSERT INTO Sach (TenSach, MaNhaXuatBan, MaNgonNgu, SoLuong, NamXuatBan, DonGia, SoTaiBan, TinhTrang, Anh)
-                    VALUES (@TenSach, @MaNhaXuatBan, @MaNgonNgu, @SoLuong, @NamXuatBan, @DonGia, @SoTaiBan, @TinhTrang, @Anh)";
+                foreach (var item in lstTacGia)
+                {
+                    var sql = "insert into Sach_TacGia values(@MaSach, @MaTacGia)";
+                    var param = new
+                    {
+                        MaSach = MaSach,
+                        MaTacGia = item
+                    };
+                    int nEffectedRows = cnn.Execute(sql, param);
+                }
+                cnn.Close();
+            }
+        }
+        public int Insert(Sach s)
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                var sql = @"INSERT INTO Sach (TenSach, MaNhaXuatBan, MaNgonNgu, SoLuong, NamXuatBan, DonGia, SoTaiBan, TinhTrang, Anh, SoLuongCon)
+                    VALUES (@TenSach, @MaNhaXuatBan, @MaNgonNgu, @SoLuong, @NamXuatBan, @DonGia, @SoTaiBan, @TinhTrang, @Anh, @SoLuong)
+                    select @@identity";
 
                 var param = new
                 {
@@ -93,12 +110,16 @@ namespace QuanLyThuVIen.Data
                     TinhTrang = s.TinhTrang,
                     Anh = s.Anh
                 };
-
-                int nEffectedRows = cnn.Execute(sql, param);
-
-                //int nEffectedRows = cnn.Execute("sp_Sach_Insert", param, commandType: CommandType.StoredProcedure);
-
-                return nEffectedRows == 1;
+                var result = cnn.ExecuteScalar(sql, param);
+                if (result != null)
+                {
+                    int MaSach = Convert.ToInt32(result);
+                    return MaSach;
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
         public bool Delete(int MaSach)
@@ -188,6 +209,21 @@ namespace QuanLyThuVIen.Data
                     MaChiTietMuon = MaChiTietMuon
                 };
                 var lstSach = cnn.Query<SachForSelect>(sql, param).ToList();
+                return lstSach;
+            }
+        }
+        public List<SachChoMuon> GetSachChoMuon(int MaChiTietMuon)
+        {
+            using (var cnn = DbUtils.GetConnection())
+            {
+                var sql = @"SELECT s.MaSach, s.TenSach,nxb.TenNhaXuatBan, sctm.SoLuong as SoLuong
+                            from Sach as s inner join NhaXuatBan as nxb on nxb.MaNhaXuatBan = s.MaNhaXuatBan
+                            join Sach_ChiTietMuon as sctm on sctm.MaSach = s.MaSach where sctm.MaChiTietMuon = @MaChiTietMuon and sctm.TrangThai = -1";
+                var param = new
+                {
+                    MaChiTietMuon = MaChiTietMuon
+                };
+                var lstSach = cnn.Query<SachChoMuon>(sql, param).ToList();
                 return lstSach;
             }
         }
